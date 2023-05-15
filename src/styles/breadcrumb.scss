@@ -1,0 +1,13 @@
+.breadcrumb {
+  font-size: 1.2rem;
+  color: var(--gray-color);
+}
+
+.breadcrumb-item a {
+  color: var(--gray-color);
+  text-decoration: none;
+}
+
+.breadcrumb-item a.active {
+  color: var(--main-color);
+}

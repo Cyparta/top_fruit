@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --right-bg-color: #f8f9fa;
+  --color-main: #40aa54;
+  --magin-left: 300px;
+  --padding-icons: 24px;
+  --gray-color: #718096;
+  --gray-color-light: #e6edff;
+  --main-color: #2c3066;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+.styletosliderofdashboard {
+  background-color: var(--right-bg-color);
+  width: var(--magin-left);
+  padding: var(--padding-icons);
+}
+.styletosliderofdashboard a {
+  color: black;
+  text-decoration: none;
+}
+.themainpartofdash {
+  margin-left: var(--magin-left);
+  width: calc(100% - var(--magin-left));
+}
