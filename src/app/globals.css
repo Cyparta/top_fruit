@@ -14,6 +14,7 @@
   --gray-color-light: #e6edff;
   --main-color: #2c3066;
   --gray-color-dark: #f8f9fa;
+  --font-size-1: ;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,4 +41,9 @@ body {
   border: 2px solid var(--gray-color-light);
   padding: 20px 34px;
   border-radius: 10px;
+}
+.add_product img,
+video {
+  width: 100%;
+  height: auto;
 }

@@ -6,11 +6,7 @@ interface tableprops {
   data: Product[];
 }
 function Table({ data }: tableprops) {
-  console.log(data);
   let headeroftable = Object.keys(data[0]);
-  console.log(headeroftable);
-  console.log(data[1]);
-
   return (
     <table className="table">
       <thead>

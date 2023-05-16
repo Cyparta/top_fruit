@@ -15,7 +15,6 @@ function overview() {
         <Totalsales />
         <Netsales />
         <ButtonPrint data="Add" />
-        {/* </div> */}
       </div>
     </>
   );
