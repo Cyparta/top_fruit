@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "../app/globals.css";
-import Slider from "@/components/Slider";
+import Slider from "@/components/slider/Slider";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.json";
 // import "bootstrap/dist/js/bootstrap.bundle.js";
@@ -13,9 +13,7 @@ if (typeof window !== "undefined") {
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Seo
-        pageTitle="top fruit"
-      />
+      <Seo pageTitle="top fruit" />
       <Slider>
         <Component {...pageProps} />
       </Slider>{" "}

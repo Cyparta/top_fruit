@@ -11,7 +11,6 @@ import {
 import { AiOutlineSetting } from "react-icons/ai";
 function Nav() {
   let [click, setclick] = React.useState(false);
- 
 
   function onclickofproduct(
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -36,7 +35,7 @@ function Nav() {
   return (
     <nav>
       <Link
-        href="/dashboard/overview"
+        href=""
         className="d-flex align-items-center mb-3"
         onClick={(e) => onclickofproduct(e)}
         id="overview"

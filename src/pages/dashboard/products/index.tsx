@@ -1,8 +1,8 @@
-import ButtonPrint from "@/components/ButtonPrint";
-import Select from "@/components/Select";
-import Table from "@/components/Table";
+import ButtonPrint from "@/components/common/ButtonPrint";
+import Select from "@/components/common/Select";
+import Table from "@/components/products/Table";
 import Seo from "@/components/common/seo";
-import Search from "@/components/overview/Search";
+import Search from "@/components/common/Search";
 import Breadcrumbs from "@/components/products/Breadcrumb ";
 import { productsNav } from "@/data/products";
 import { useRouter } from "next/router";
@@ -17,7 +17,6 @@ function index() {
     data = "";
   } else {
     data = url;
-    // console.log(url);
   }
   return (
     <>
@@ -27,7 +26,7 @@ function index() {
         <Search />
         <div className="stylerow row">
           <div className="col-12 col-md-6 col-lg-6">
-            <h3>All Products</h3>
+            <h3 className="colorblue mb-5">All Products</h3>
           </div>
           <div className="col-12 col-md-6 col-lg-6 row">
             <div className="col-12 col-md-6 col-lg-6">

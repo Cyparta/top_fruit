@@ -8,8 +8,8 @@ function Breadcrumbs({ data }: breadcrumbsprops) {
   let router = useRouter();
   function onclickofproduct(e: React.MouseEvent<HTMLElement, MouseEvent>) {
     let href = e.target as HTMLAnchorElement;
-    router.push(href.id);
-    // console.log(href);
+    router.push(href);
+    console.log(href);
   }
   return (
     <Breadcrumb>
@@ -22,7 +22,6 @@ function Breadcrumbs({ data }: breadcrumbsprops) {
       {data === "" ? (
         <Breadcrumb.Item
           id="/dashboard/products"
-          
           onClick={(e) => onclickofproduct(e)}
         >
           All products
