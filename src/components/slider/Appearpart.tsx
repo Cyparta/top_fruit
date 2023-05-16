@@ -22,6 +22,7 @@ function Appearpart({ data, name }: Appearpartprops) {
   }
   function onclickmenu(item: string) {
     console.log(document.getElementsByClassName("dropdown-item"));
+    // document.getElementsByClassName("dropdown-item").forEach((element) => {})
     router.push(item);
   }
   return (

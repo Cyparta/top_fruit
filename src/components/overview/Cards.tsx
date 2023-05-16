@@ -18,7 +18,7 @@ function Cards() {
                     <div>
                       <h3 className="card-title">{ele.number}</h3>
                       <p className="card-text">{ele.title}</p>
-                      <span className="colorspan">{ele.discount}</span>
+                      <span className="colorgray">{ele.discount}</span>
                     </div>
                     {ele.id === 1 ? (
                       <MdLocalGroceryStore className="iconstyle fs-3 p-2" />

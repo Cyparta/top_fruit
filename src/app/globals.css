@@ -32,3 +32,12 @@ body {
   margin-left: var(--magin-left);
   width: calc(100% - var(--magin-left));
 }
+
+.colorgray {
+  color: var(--gray-color);
+}
+.stylerow {
+  border: 2px solid var(--gray-color-light);
+  padding: 20px 34px;
+  border-radius: 10px;
+}

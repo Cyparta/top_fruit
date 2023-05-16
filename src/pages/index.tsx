@@ -9,7 +9,7 @@ function overview() {
   
   return (
     <>
-      <div className="m-4">
+      <div className="overview m-4">
         <Search />
         <Cards />
         <Totalsales />

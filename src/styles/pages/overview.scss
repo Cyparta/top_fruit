@@ -1,0 +1,20 @@
+
+#button-addon2 {
+  box-sizing: content-box;
+}
+.fontsize {
+  font-size: 30px;
+}
+
+.stylecard{
+  border: 0;
+  // font-size: 30px;
+}
+.overview {
+  .row{
+    .col-sm-3:not(:last-child){
+      border-right: 2px solid var(--gray-color-light);
+    }
+  }
+}
+
