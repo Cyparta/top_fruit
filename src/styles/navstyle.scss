@@ -12,6 +12,11 @@
   width: var(--magin-left);
   padding: var(--padding-icons);
 }
+.styletosliderofdashboard a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
 .themainpartofdash {
   margin-left: var(--magin-left);
   width: calc(100% - var(--magin-left));
@@ -50,14 +55,14 @@
 }
 #displayTheProduct {
   li {
-    a {
+    .dropdown-item {
       color: var(--gray-color);
     }
   }
 }
 #displayTheProduct {
   li {
-    a.active {
+    .dropdown-item.active {
       color: var(--main-color);
     }
   }

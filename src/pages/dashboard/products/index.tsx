@@ -38,10 +38,10 @@ function index() {
           </div>
           <Table data={productsNav} />
         </div>
-        <p className="spancolor p-2">
+        <div className="spancolor p-2">
           Showing {productsNav.length} of {productsNav.length} Results
-        </p>
-        <ButtonPrint />
+        </div>
+        <ButtonPrint  data="Print"/>
       </div>
     </>
   );

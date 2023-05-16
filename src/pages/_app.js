@@ -7,16 +7,19 @@ import "bootstrap-icons/font/bootstrap-icons.json";
 import "../index.scss";
 import Seo from "@/components/common/seo";
 // import "href='' rel='stylesheet'";
-if (typeof window !== "undefined") {
-  require("bootstrap/dist/js/bootstrap");
-}
+
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    // if (typeof window !== "undefined") {
+    require("bootstrap/dist/js/bootstrap");
+    // }
+  });
   return (
     <>
       <Seo pageTitle="top fruit" />
       <Slider>
         <Component {...pageProps} />
-      </Slider>{" "}
+      </Slider>
     </>
   );
 }

@@ -6,9 +6,7 @@ import Totalsales from "@/components/overview/Totalsales";
 import React from "react";
 import { CgSearch } from "react-icons/cg";
 function overview() {
-  function handlePrintClick() {
-    window.print();
-  }
+  
   return (
     <>
       <div className="m-4">
@@ -16,7 +14,7 @@ function overview() {
         <Cards />
         <Totalsales />
         <Netsales />
-        <ButtonPrint />
+        <ButtonPrint data="Add" />
         {/* </div> */}
       </div>
     </>

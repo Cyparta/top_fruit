@@ -11,12 +11,16 @@ const Seo = ({ pageTitle }) => (
       />
       <meta
         name="description"
-        content="FindHouse - Real Estate React Template"
+        content="top fruit is a real estate website template."
       />
       <meta name="ibthemes" content="ATFN" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta
+        name="format-detection"
+        content="telephone=no, date=no, email=no, address=no"
       />
 
       <link

@@ -1,16 +1,20 @@
 import React from "react";
-
-function ButtonPrint() {
+interface buttonPrintprops {
+  data: string;
+}
+function ButtonPrint({ data }: buttonPrintprops) {
   function handlePrintClick() {
-    window.print();
+    if (data === "Print") {
+      window.print();
+    }
   }
   return (
     <>
       <button
-        className="iconstyle iconstylebackgroundgreen w-25 ml-auto p-2 mt-4 d-flex justify-content-center align-items-center"
+        className="iconstyle iconstylebackgroundgreen w-25 ml-auto p-2 mt-4 d-flex justify-content-center align-items-center colorblue"
         onClick={handlePrintClick}
       >
-        Print
+        {data}
       </button>
     </>
   );

@@ -34,46 +34,64 @@ function Nav() {
   }
   return (
     <nav>
-      <Link
-        href=""
-        className="d-flex align-items-center mb-3"
-        onClick={(e) => onclickofproduct(e)}
-        id="overview"
-      >
-        <BiTimeFive
-          className={
-            click ? "iconstyle iconstylebackgroundgreen mr-3" : "iconstyle mr-3"
-          }
-          id="overviewicon"
-        />
-        <p className="m-0">Overview</p>
-      </Link>
-      <Link href="/dashboard/products">
-        <Appearpart data={productsNav} name="Products" />
-      </Link>
-      <Link href="/dashboard/analytics">
-        <Appearpart data={analyticsNav} name="Analytics" />
-      </Link>
-      <Link href="/dashboard/marketing">
-        <Appearpart data={MarketingNav} name="Marketing" />
-      </Link>
-      <Link href="/dashboard/users">
-        <Appearpart data={usersNav} name="Users" />
-      </Link>
-      <Link
-        href="/dashboard/settings"
-        className="d-flex align-items-center mb-3"
-        onClick={(e) => onclickofproduct(e)}
-        id="settings"
-      >
-        <AiOutlineSetting
-          className={
-            click ? "iconstyle iconstylebackgroundgreen mr-3" : "iconstyle mr-3"
-          }
-          id="settingsicon"
-        />
-        <p className="m-0">Settings</p>
-      </Link>
+      <ul>
+        <li>
+          <Link
+            href="/"
+            className="d-flex align-items-center mb-3"
+            onClick={(e) => onclickofproduct(e)}
+            id="overview"
+          >
+            <BiTimeFive
+              className={
+                click
+                  ? "iconstyle iconstylebackgroundgreen mr-3"
+                  : "iconstyle mr-3"
+              }
+              id="overviewicon"
+            />
+            <div className="m-0">Overview</div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/dashboard/products">
+            <Appearpart data={productsNav} name="Products" />
+          </Link>
+        </li>
+        <li>
+          <Link href="/dashboard/analytics">
+            <Appearpart data={analyticsNav} name="Analytics" />
+          </Link>
+        </li>
+        <li>
+          <Link href="/dashboard/marketing">
+            <Appearpart data={MarketingNav} name="Marketing" />
+          </Link>
+        </li>
+        <li>
+          <Link href="/dashboard/users">
+            <Appearpart data={usersNav} name="Users" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/dashboard/settings"
+            className="d-flex align-items-center mb-3"
+            onClick={(e) => onclickofproduct(e)}
+            id="settings"
+          >
+            <AiOutlineSetting
+              className={
+                click
+                  ? "iconstyle iconstylebackgroundgreen mr-3"
+                  : "iconstyle mr-3"
+              }
+              id="settingsicon"
+            />
+            <div className="m-0">Settings</div>
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

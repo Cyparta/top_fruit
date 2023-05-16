@@ -7,17 +7,22 @@ import { BsPercent } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
 import { FiUsers } from "react-icons/fi";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface Appearpartprops {
   data: objectproductitem[];
   name: string;
 }
 function Appearpart({ data, name }: Appearpartprops) {
+  let router = useRouter();
   let [click, setclick] = React.useState(false);
   function onclickofproduct(e: React.MouseEvent<any>) {
     setclick(!click);
-    (e.target as HTMLButtonElement).style.color=""
-    console.log(e.target);
+    (e.target as HTMLButtonElement).style.color = "";
+  }
+  function onclickmenu(item: string) {
+    console.log(document.getElementsByClassName("dropdown-item"));
+    router.push(item);
   }
   return (
     <>
@@ -59,7 +64,7 @@ function Appearpart({ data, name }: Appearpartprops) {
         )}
         <div className="styletoselect">
           <button
-            className=""
+            className="colorblue"
             type="button"
             id="dropdownMenuButton1"
             onClick={(e) => onclickofproduct(e)}
@@ -74,19 +79,23 @@ function Appearpart({ data, name }: Appearpartprops) {
         {data.map((item, index) => {
           return (
             <>
-              {index === 0 ? (
-                <li key={index}>
-                  <Link className="dropdown-item mb-3 active" href={item.href?item.href:""} >
+              <li key={index}>
+                {index === 0 ? (
+                  <button
+                    className="dropdown-item mb-3 active"
+                    onClick={() => onclickmenu(item.href ? item.href : "")}
+                  >
                     {item.name}
-                  </Link>
-                </li>
-              ) : (
-                <li key={index}>
-                  <Link className="dropdown-item mb-3" href={item.href?item.href:""}>
+                  </button>
+                ) : (
+                  <button
+                    className="dropdown-item mb-3"
+                    onClick={() => onclickmenu(item.href ? item.href : "")}
+                  >
                     {item.name}
-                  </Link>
-                </li>
-              )}
+                  </button>
+                )}
+              </li>
             </>
           );
         })}
