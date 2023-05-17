@@ -8,13 +8,19 @@ interface tableprops {
 function Table({ data }: tableprops) {
   let headeroftable = Object.keys(data[0]);
   return (
-    <table className="table">
+    <table className="table" data-bs-filter-control="true">
       <thead>
         <tr>
           {headeroftable.map((ele) => {
-            return <th scope="col">{ele}</th>;
+            return (
+              <th scope="col" data-bs-field={ele}>
+                {ele}
+              </th>
+            );
           })}
-          <th scope="col">Action</th>
+          <th scope="col" data-bs-field="action">
+            Action
+          </th>
         </tr>
       </thead>
       <tbody>

@@ -6,6 +6,8 @@ import "bootstrap-icons/font/bootstrap-icons.json";
 // import "bootstrap/dist/js/bootstrap.bundle.js";
 import "../index.scss";
 import Seo from "@/components/common/seo";
+import { Provider } from "react-redux";
+import { store } from "@/app/store";
 // import "href='' rel='stylesheet'";
 
 function MyApp({ Component, pageProps }) {
@@ -17,9 +19,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Seo pageTitle="top fruit" />
-      <Slider>
-        <Component {...pageProps} />
-      </Slider>
+      <Provider store={store}>
+        <Slider>
+          <Component {...pageProps} />
+        </Slider>
+      </Provider>
     </>
   );
 }
