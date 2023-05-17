@@ -5,14 +5,25 @@ import { FiUsers } from "react-icons/fi";
 import { analyticsdata } from "@/data/analyics";
 import { BiMoneyWithdraw } from "react-icons/bi";
 function Cards() {
-  console.log(analyticsdata);
+  function onclickofproduct(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    (e.target as HTMLDivElement).classList.toggle("iconstylebackgroundgreen");
+    const items = document.getElementsByClassName("card");
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      console.log(item);
+      item.classList.remove("cardstyle");
+    }
+    (e.target as HTMLDivElement).parentElement?.classList.toggle("cardstyle");
+
+    console.log(e.target);
+  }
   return (
     <>
-      <div className="row">
+      <div className="row" onClick={(e) => onclickofproduct(e)}>
         {analyticsdata.map((ele, index) => {
           return (
             <div className="col-sm-4" key={index}>
-              <div className="card">
+              <div className="card" id="card">
                 <div className="card-body d-flex align-items-start  justify-content-between">
                   <>
                     <div>
