@@ -1,6 +1,6 @@
 import { objectproductitem } from "@/data/productsnav";
 import React, { ReactNode } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BsFolder } from "react-icons/bs";
 import { MdAnalytics } from "react-icons/md";
 import { BsPercent } from "react-icons/bs";
@@ -20,9 +20,16 @@ function Appearpart({ data, name }: Appearpartprops) {
     setclick(!click);
     (e.target as HTMLButtonElement).style.color = "";
   }
-  function onclickmenu(item: string) {
-    console.log(document.getElementsByClassName("dropdown-item"));
-    // document.getElementsByClassName("dropdown-item").forEach((element) => {})
+  function onclickmenu(
+    item: string,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) {
+    const items = document.getElementsByClassName("dropdown-item");
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      item.classList.remove("active");
+    }
+    (e.target as HTMLAnchorElement).classList.add("active");
     router.push(item);
   }
   return (
@@ -72,32 +79,33 @@ function Appearpart({ data, name }: Appearpartprops) {
           >
             {name}
           </button>
-          <IoIosArrowDown className="ai" onClick={(e) => onclickofproduct(e)} />
+          {click ? (
+            <IoIosArrowDown
+              className="ai"
+              onClick={(e) => onclickofproduct(e)}
+            />
+          ) : (
+            <IoIosArrowUp className="ai" onClick={(e) => onclickofproduct(e)} />
+          )}
         </div>
       </div>
 
       <ul id="displayTheProduct" className={click ? "appear" : "hidden"}>
         {data.map((item, index) => {
           return (
-            <>
-              <li key={index}>
-                {index === 0 ? (
-                  <button
-                    className="dropdown-item mb-3 active"
-                    onClick={() => onclickmenu(item.href ? item.href : "")}
-                  >
-                    {item.name}
-                  </button>
-                ) : (
-                  <button
-                    className="dropdown-item mb-3"
-                    onClick={() => onclickmenu(item.href ? item.href : "")}
-                  >
-                    {item.name}
-                  </button>
-                )}
-              </li>
-            </>
+            <li key={index} className={index === 0 ? "active" : ""}>
+              <Link
+                href={item.href ? item.href : ""}
+                className={
+                  index === 0
+                    ? "dropdown-item mb-3 active"
+                    : "dropdown-item mb-3"
+                }
+                onClick={(e) => onclickmenu(item.href ? item.href : "", e)}
+              >
+                {item.name}
+              </Link>
+            </li>
           );
         })}
       </ul>

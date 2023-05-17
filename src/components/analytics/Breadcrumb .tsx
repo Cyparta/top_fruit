@@ -10,13 +10,13 @@ function Breadcrumbs({ data }: breadcrumbsprops) {
 
   return (
     <ul className="breadcrumbs">
-      <Link href="/dashboard/products" className="">
-        products
+      <Link href="/dashboard/analytics" className="">
+        analytics
       </Link>
       {data === "" ? (
-        <Link href="/dashboard/products">/All products</Link>
+        <Link href="/dashboard/analytics">/products</Link>
       ) : (
-        <Link href={`/dashboard/products/${data}`}>/{data}</Link>
+        <Link href={`/dashboard/analytics/${data}`}>{data}</Link>
       )}
     </ul>
   );

@@ -3,7 +3,7 @@ import { CgSearch } from "react-icons/cg";
 
 function Search() {
   return (
-    <div className="input-group mb-3 ">
+    <div className="input-group mb-3  ">
       <div className="input-group-prepend">
         <span className="input-group-text">
           <CgSearch id="button-addon2" className=" p-2" />
