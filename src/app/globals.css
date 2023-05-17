@@ -41,3 +41,35 @@ body {
   padding: 20px 34px;
   border-radius: 10px;
 }
+
+
+.main-input {
+  width: 100%;
+  border: 1px solid rgba(230, 237, 255, 1);
+  border-radius:6px;
+  margin-left:16px;
+  padding:8px;
+  outline: none;
+  &:focus {
+      border: 1px solid rgba(230, 237, 255, 1);
+  }
+}
+.label {
+  color: rgba(18, 18, 18, 1);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+
+.gapx-1 {
+  gap: 0px 10px 
+}
+
+.gapx-2 {
+  gap: 0px 20px 
+}
+
+.btn-add {
+  background-color: #40aa54;
+}
