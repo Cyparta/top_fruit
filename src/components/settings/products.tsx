@@ -1,10 +1,11 @@
 import React from 'react'
 import ButtonPrint from '../common/ButtonPrint'
-import InputControl from './inputControl'
+import InputControl from '../common/inputControl'
 
 const Products = () => {
   return (
     <div className='stylerow'>
+      <div className='d-flex flex flex-column gap-4'>
       <InputControl
         text="The number of products left to put in a <br /> case The product stock is marked as low in stock"
         placeholder="write number"
@@ -17,7 +18,6 @@ const Products = () => {
         width="275px"
         fullWidth={false}
       />
-
       <div className='d-flex align-items-center mb-5'>
         <p className='label'>Notification recipient</p>
         <select name="cars" id="cars" style={{ width: "275px" }} className='main-input'>
@@ -27,6 +27,8 @@ const Products = () => {
           <option value="Audi">Audi</option>
         </select>
       </div>
+      </div>
+
 
       <div className="line mb-3"></div>
 

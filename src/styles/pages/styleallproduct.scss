@@ -2,7 +2,7 @@
   color: var(--gray-color);
 }
 th[scope="col"] {
-  color: var(--main-color);
+  color: var(--main-color-blue);
 }
 .styletoaddphoto {
   background-color: var(--gray-color-dark);
@@ -26,5 +26,5 @@ th[scope="col"] {
 }
 // styletoaddphoto
 .colorblue {
-  color: var(--main-color) !important;
+  color: var(--main-color-blue) !important;
 }

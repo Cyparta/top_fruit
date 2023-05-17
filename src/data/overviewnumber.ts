@@ -21,6 +21,20 @@ export const overviewNumber: overviewNumber[] = [
     title: "net sales",
     discount: "+0.49% this week",
   },
+];
+export const marktingNumber: overviewNumber[] = [
+  {
+    id: 1,
+    number: "124,854",
+    title: "Total Sales",
+    discount: "+1.51% this week",
+  },
+  {
+    id: 2,
+    number: "23,283.5",
+    title: "net sales",
+    discount: "+0.49% this week",
+  },
   {
     id: 3,
     number: "46,827",
