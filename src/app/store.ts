@@ -1,14 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import agentSlice from "../features/agent/agentSlice";
+
 import { api } from "../features/api/api";
-// import filterSlice from "../features/filter/filterSlice";
-// import langSlice from "../features/lang/langSlice";
-// import propertiesSlice from "../features/properties/propertiesSlice";
-// import buildingSlice from "../features/building/buildingSlice";
+import analyticsSlice from "@/features/analytics/analyticsSlice";
+
 
 export const store = configureStore({
   reducer: {
-    // [api.reducerPath]: api.reducer,
+    [api.reducerPath]: api.reducer,
+    analytics: analyticsSlice,
     // properties: propertiesSlice,
     // filter: filterSlice,
     // agent: agentSlice,

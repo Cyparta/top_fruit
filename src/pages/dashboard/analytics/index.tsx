@@ -1,17 +1,25 @@
 import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Cards from "@/components/analytics/Cards";
 import Search from "@/components/common/Search";
+import Select from "@/components/common/Select";
 import Seo from "@/components/common/seo";
+import Table from "@/components/products/Table";
+import { productsNav } from "@/data/products";
+import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 function index() {
   let router = useRouter();
+  let dispatch = useDispatch();
   let url = router.route.slice(10).replace("/analytics", "");
   let data = "";
   if (!url) {
+    dispatch(breadcrumdsname("analytics"));
     data = "";
   } else {
+    dispatch(breadcrumdsname(url));
     data = url;
   }
   return (
@@ -21,6 +29,23 @@ function index() {
         <Breadcrumbs data={data} />
         <Search />
         <Cards />
+        <div className="stylerow mt-5 row">
+          <div className="col-12 col-md-6 col-lg-6">
+            <h3 className="colorblue mb-5">All Products</h3>
+          </div>
+          <div className="col-12 col-md-6 col-lg-6 row">
+            <div className="col-12 col-md-6 col-lg-6">
+              <Search />
+            </div>
+            <div className="col-12 col-md-6 col-lg-6">
+              <Select />
+            </div>
+          </div>
+          <Table data={productsNav} />
+        </div>
+        <div className="spancolor p-2">
+          Showing {productsNav.length} of {productsNav.length} Results
+        </div>
       </div>
     </>
   );
