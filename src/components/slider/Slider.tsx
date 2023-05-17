@@ -15,7 +15,7 @@ function Slider({ children }: { children: React.ReactNode }) {
           <Image src={image1} alt={""} style={{ marginBottom: "35px" }} />
           <Nav />
         </div>
-        <main className="themainpartofdash w-100">{children}</main>
+        <main className="themainpartofdash">{children}</main>
       </div>
     </>
   );

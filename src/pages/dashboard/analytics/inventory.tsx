@@ -1,15 +1,21 @@
 import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Seo from "@/components/common/seo";
+import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 function inventory() {
   let router = useRouter();
+  let dispatch=useDispatch()
   let url = router.route.slice(10).replace("/analytics", "");
   let data = "";
   if (!url) {
+    dispatch(breadcrumdsname("analytics"));
     data = "";
   } else {
+    url = url.replace("/", "");
+    dispatch(breadcrumdsname(url));
     data = url;
   }
   return (

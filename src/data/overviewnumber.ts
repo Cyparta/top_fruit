@@ -4,7 +4,7 @@ interface overviewNumber {
   title: string;
   discount: string;
 }
-interface datatype {
+export interface datatype {
   month: string;
   value: number;
 }
