@@ -1,0 +1,36 @@
+.marketing {
+    .delete-ad {
+        color:rgba(119, 119, 119, 1);
+        text-decoration: underline;
+        font-size: 14px;
+    }
+    .add-image{
+        position: relative;
+    }
+    .plus-image {
+        position:absolute;
+        top:45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color:rgba(119, 119, 119, 1)
+    }
+}
+.modal-dialog {
+    .head {
+        margin-bottom:0px;
+        color:"rgba(18, 18, 18, 1)";
+        font-weight:500;
+    }
+    .ad-cate {
+        background-color: #D8EEDC;
+        padding:8px;
+        border-radius: 6px;
+        color:#000;
+        cursor: pointer;
+        color: #121212;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+}

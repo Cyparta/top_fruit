@@ -12,7 +12,7 @@
   --padding-icons: 24px;
   --gray-color: #718096;
   --gray-color-light: #e6edff;
-  --main-color: #2c3066;
+  --main-color-blue: #2c3066;
   --gray-color-dark: #f8f9fa;
   --font-size-1: ;
 }
@@ -78,4 +78,8 @@ video {
 
 .btn-add {
   background-color: #40aa54;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

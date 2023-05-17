@@ -1,5 +1,5 @@
 import React from 'react'
-import InputControl from './inputControl'
+import InputControl from '../common/inputControl'
 
 const Taxes = () => {
     return (
@@ -8,21 +8,24 @@ const Taxes = () => {
                 Taxes Settings
             </h3>
             <div>
-                <InputControl
-                    text="Tax value"
-                    width="275px"
-                />
-                <InputControl
-                    text="Shipping value"
-                    width="275px"
-                />
-                <InputControl
-                    text="Shipping tax"
-                    width="275px"
-                />
+
+                <div className='d-flex flex flex-column gap-4'>
+                    <InputControl
+                        text="Tax value"
+                        width="275px"
+                    />
+                    <InputControl
+                        text="Shipping value"
+                        width="275px"
+                    />
+                    <InputControl
+                        text="Shipping tax"
+                        width="275px"
+                    />
+                </div>
 
                 <div>
-                    <div className='d-flex align-items-center'>
+                    <div className='d-flex align-items-center mt-4'>
                         <input type="checkbox" />
                         <span className='d-inline-block ml-3'>Calculating the tax within the price of the final product</span>
                     </div>
