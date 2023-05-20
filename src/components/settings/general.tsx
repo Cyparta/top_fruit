@@ -1,5 +1,5 @@
 import ButtonPrint from "../common/ButtonPrint"
-import InputControl from "./inputControl"
+import InputControl from "../common/inputControl"
 
 function General() {
     return <>
@@ -7,18 +7,23 @@ function General() {
             <h3 className="head colorblue mb-4">
                 Store Address
             </h3>
-            <InputControl text="Title" />
-            <InputControl text="Selling to specific countries" />
-            <InputControl text="Sale to specific cities" />
+            <div className="d-flex flex flex-column gap-4">
+                <InputControl text="Title" />
+                <InputControl text="Selling to specific countries" />
+                <InputControl text="Sale to specific cities" />
+            </div>
         </div>
 
         <div className='stylerow mt-3'>
             <h3 className="head colorblue mb-4">
                 General options
             </h3>
-            <InputControl text="Time zone" />
-            <InputControl text="The week begins"/>
-            <InputControl text="Sale to specific cities"/>
+            <div className="d-flex flex flex-column gap-4">
+
+                <InputControl text="Time zone" />
+                <InputControl text="The week begins" />
+                <InputControl text="Sale to specific cities" />
+            </div>
         </div>
 
 

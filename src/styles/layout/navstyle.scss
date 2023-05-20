@@ -13,7 +13,7 @@
   padding: var(--padding-icons);
 }
 .styletosliderofdashboard a {
-  color: var(--main-color);
+  color: var(--main-color-blue);
   text-decoration: none;
 }
 
@@ -63,7 +63,7 @@
 #displayTheProduct {
   li {
     .dropdown-item.active {
-      color: var(--main-color);
+      color: var(--main-color-blue);
     }
   }
 }
