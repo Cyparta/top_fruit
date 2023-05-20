@@ -2,8 +2,10 @@ import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Cards from "@/components/analytics/Cards";
 import Search from "@/components/common/Search";
 import Select from "@/components/common/Select";
+import Table from "@/components/common/Table";
 import Seo from "@/components/common/seo";
-import Table from "@/components/products/Table";
+import { columsProductsinanalys } from "@/data/columsProduct";
+// import Table from "@/components/products/Table";
 import { productsNav } from "@/data/products";
 import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
@@ -33,15 +35,12 @@ function index() {
           <div className="col-12 col-md-6 col-lg-6">
             <h3 className="colorblue mb-5">All Products</h3>
           </div>
-          <div className="col-12 col-md-6 col-lg-6 row">
-            <div className="col-12 col-md-6 col-lg-6">
-              <Search />
-            </div>
-            <div className="col-12 col-md-6 col-lg-6">
-              <Select />
-            </div>
-          </div>
-          <Table data={productsNav} />
+
+          <Table
+            columsresult={columsProductsinanalys}
+            data={productsNav}
+            selectvalue="category"
+          />
         </div>
         <div className="spancolor p-2">
           Showing {productsNav.length} of {productsNav.length} Results

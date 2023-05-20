@@ -6,6 +6,7 @@ export interface Product {
   country_of_origin: string;
   amount: string;
   price: string;
+  items_sold?: string;
 }
 export let productsNav: Product[] = [
   {
@@ -15,6 +16,7 @@ export let productsNav: Product[] = [
     product_name: "Tomato",
     country_of_origin: "local",
     amount: "200 Kilo",
+    items_sold: "sold",
     price: "545412 SAR",
   },
   {
@@ -24,6 +26,7 @@ export let productsNav: Product[] = [
     product_name: "Aomato",
     country_of_origin: "local",
     amount: "500 Kilo",
+    items_sold: "sold",
     price: "545412 SAR",
   },
   {
@@ -32,14 +35,17 @@ export let productsNav: Product[] = [
     category: "fruits",
     product_name: "Bomato",
     country_of_origin: "local",
+    items_sold: "sold",
     amount: "300 Kilo",
     price: "545412 SAR",
-  },{
+  },
+  {
     no: 1,
     sku: "#12594",
     category: "fruits",
     product_name: "Tomato",
     country_of_origin: "local",
+    items_sold: "sold",
     amount: "200 Kilo",
     price: "545412 SAR",
   },

@@ -1,18 +1,24 @@
-import { columsinterface } from "@/data/colums";
+// import { columsinterface } from "@/data/colums";
 import { Product } from "@/data/products";
 import React, { useState } from "react";
 import { CgArrowsExchangeAltV, CgSearch } from "react-icons/cg";
 interface GlobalFilterprops {
   filter: string;
   setFilter: (filter: string) => void;
-  column?: columsinterface;
+  // column?: columsinterface;
   data?: Product[];
+  selectvalue?: string;
 }
 
-function GlobalFilter({ filter, setFilter, column, data }: GlobalFilterprops) {
+function GlobalFilter({
+  filter,
+  setFilter,
+  data,
+  selectvalue,
+}: GlobalFilterprops) {
   // const { filterselect, setfilterselect } = column;
-  const [selectvalue,setselectvalue]=useState()
-  console.log(column);
+  // const [selectvalue, setselectvalue] = useState();
+
   return (
     <div className="col-12 col-md-6 col-lg-6 row">
       <div className="col-12 col-md-6 col-lg-6">
@@ -33,8 +39,8 @@ function GlobalFilter({ filter, setFilter, column, data }: GlobalFilterprops) {
           />
         </div>
       </div>
-      <div className="col-12 col-md-6 col-lg-6">
-        {column ? (
+      {selectvalue ? (
+        <div className="col-12 col-md-6 col-lg-6">
           <select
             className="form-select p-2"
             aria-label="Default select example"
@@ -42,15 +48,15 @@ function GlobalFilter({ filter, setFilter, column, data }: GlobalFilterprops) {
             value={filter || ""}
           >
             {data
-              ?.filter((ele) => ele.category)
+              ?.filter((ele) => ele[selectvalue])
               .map((elem) => {
-                return <option>{elem.category}</option>;
+                return <option> {elem[selectvalue]}</option>;
               })}
           </select>
-        ) : (
-          ""
-        )}
-      </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
