@@ -2,10 +2,12 @@ import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Cards from "@/components/analytics/Cards";
 import ButtonPrint from "@/components/common/ButtonPrint";
 import Search from "@/components/common/Search";
+// import Table from "@/components/common/Table";
 import Seo from "@/components/common/seo";
 import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
 import React from "react";
+// import { Table } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 
 function revenue() {
@@ -29,6 +31,7 @@ function revenue() {
         <Search />
         <Cards />
         <ButtonPrint data="Print"/>
+        {/* <Table/> */}
       </div>
     </>
   );

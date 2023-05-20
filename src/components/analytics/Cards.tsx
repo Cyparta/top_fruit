@@ -13,7 +13,12 @@ import { BiMoneyWithdraw } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { clickcard } from "@/features/analytics/analyticsSlice";
 import Chart from "../common/Chart";
-import { dataanalytics, revenuedatamonth } from "@/data/datatoanalytics";
+import {
+  dataanalytics,
+  ordernalytics,
+  revenuedatamonth,
+  taxesanalytics,
+} from "@/data/datatoanalytics";
 import Icontocard from "./Icontocard";
 import Icontoorders from "./Icontoorders";
 import Icontotax from "./Icontotax";
@@ -51,11 +56,10 @@ function Cards() {
       setcharresult(revenuedatamonth);
       setresult(revenuedata);
     } else if (name === "orders") {
-      setcharresult(dataanalytics);
-
+      setcharresult(ordernalytics);
       setresult(orderdata);
     } else if (name === "taxes") {
-      setcharresult(dataanalytics);
+      setcharresult(taxesanalytics);
       setresult(taxesdata);
     } else if (name === "analytics") {
       setcharresult(dataanalytics);
@@ -73,7 +77,15 @@ function Cards() {
         {result.map((ele, index) => {
           return (
             <div
-              className="col-sm-4"
+              className={
+                name === "revenue"
+                  ? "col-sm-4"
+                  : name === "orders"
+                  ? "col-sm-3"
+                  : name === "taxes"
+                  ? "col-sm-3"
+                  : "col-sm-4"
+              }
               key={index}
               onClick={(e) => onclickofproduct(e, ele.id)}
             >
@@ -108,12 +120,25 @@ function Cards() {
         })}
       </div>
       <div className=" mt-5">
-       
         {chartresult.filter((ele) => ele.id === idele) ? (
           chartresult
             .filter((ele) => ele.id === idele)
             .map((ele, index) => {
-              return <Chart data={ele.data} title="Orders" key={index} />;
+              return (
+                <Chart
+                  data={ele.data}
+                  title={
+                    name === "revenue"
+                      ? "revenue"
+                      : name === "orders"
+                      ? "orders"
+                      : name === "taxes"
+                      ? "taxes"
+                      : "analyics"
+                  }
+                  key={index}
+                />
+              );
             })
         ) : (
           <Chart data={chartresult[0].data} title="Orders" key={0} />
