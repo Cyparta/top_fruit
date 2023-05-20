@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/analytics/Breadcrumb ";
+import Cards from "@/components/analytics/Cards";
 import Seo from "@/components/common/seo";
 import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
@@ -23,6 +24,7 @@ function taxes() {
       <Seo pageTitle="analytics" />
       <div className="m-5">
         <Breadcrumbs data={data} />
+        <Cards/>
       </div>
     </>
   );
