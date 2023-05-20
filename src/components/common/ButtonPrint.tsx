@@ -11,7 +11,7 @@ function ButtonPrint({ data }: buttonPrintprops) {
   return (
     <>
       <button
-        className="iconstyle iconstylebackgroundgreen w-25 ml-auto p-2 mt-4 d-flex justify-content-center align-items-center colorblue"
+        className={`iconstyle iconstylebackgroundgreen w-25 ml-auto p-2 mt-4 d-flex justify-content-center align-items-center colorblue`}
         onClick={handlePrintClick}
       >
         {data}
