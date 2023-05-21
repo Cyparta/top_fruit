@@ -24,7 +24,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
   // const data = React.useMemo(() => productsNav, []) as Product[];
   // const tableinfo = useTable({ columns: columsresult, data: productsNav},useGlobalFilter);
   const tableInstance = useTable(
-    { columns: columsresult, data: productsNav },
+    { columns: columsresult, data },
     useFilters,
     useGlobalFilter,
     useSortBy
@@ -46,7 +46,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
       <GlobalFilter
         filter={globalFilter}
         setFilter={setGlobalFilter}
-        data={productsNav}
+        data={data}
         selectvalue={selectvalue}
       />
 
