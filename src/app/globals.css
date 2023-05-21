@@ -89,3 +89,24 @@ video {
   height: 0.2px;
   background-color: rgb(119 119 119 / 24%);
 }
+
+
+.modal-dialog .modal-content {
+  padding:80px 48px 0px !important
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 950px !important;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 950px !important;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}

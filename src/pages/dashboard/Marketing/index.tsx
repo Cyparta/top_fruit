@@ -1,6 +1,7 @@
 import Search from '@/components/common/Search';
 import Seo from '@/components/common/seo'
-import Breadcrumbs from '@/components/products/Breadcrumb ';
+// import Breadcrumbs from '@/components/products/Breadcrumb ';
+import Breadcrumbs from '@/components/common/BreadCrumb';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import markting from '../../../../public/assets/image/markting/1.png'
@@ -14,25 +15,26 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import InputControl from '@/components/common/inputControl';
 import AddImage from '@/components/products/AddImage';
+import Inputdata from '@/components/common/Inputdata';
+// import {Swiper, SwiperSlide } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Crumbs } from '@/data/crumbs';
+
+const data: Crumbs[] = [{ title: "marketing", to: "marketing", active: false }, { title: "Ads", to: "marketing", active: true }]
+
 function index() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  let router = useRouter();
-  let url = router.route.slice(10).replace("/products", "");
-  let data = "";
-  if (!url) {
-    data = "";
-  } else {
-    data = url;
-  }
   return (
     <div className='marketing'>
       <div className='m-5'>
         <Seo pageTitle="marketing" />
 
         {/* ------ Bread Crumb -------*/}
+        {/* <Breadcrumbs data={data} /> */}
         <Breadcrumbs data={data} />
 
         {/*------- Search ------*/}
@@ -102,46 +104,56 @@ function index() {
             onHide={handleClose}
             keyboard={false}
             centered
+            dialogClassName="custom-modal"
           >
             <div className='row align-items-center'>
               <div className="col-6">
                 <div className='' style={{ fontSize: "20px" }}>
-                  <h3 className='colorblue'>Add New Ad</h3>
+                  <h3 className='colorblue' style={{ marginBottom: "26px" }}>Add New Ad</h3>
                 </div>
 
-                <div className='mb-4'>
-                  <p className='head  mb-1'>Ad Title</p>
-                  <InputControl text="" placeholder="please Enter" width="auto" fullWidth={true} />
+                <div className=''>
+                  <Inputdata name="Ad-Title" desc="please Enter" title="Ad Title" />
                 </div>
-                <div className='mb-4'>
-                  <p className='head  mb-1'>Ad Description</p>
-                  <InputControl text="" placeholder="please Enter" width="auto" fullWidth={true} />
+                <div className=''>
+                  <Inputdata name="Ad-Title" desc="please Enter" title="Ad Title" />
                 </div>
 
                 <div className='mb-3'>
                   <p className='head mb-1'>Ad Category</p>
-                  <div className="d-flex gapx-1 flex-wrap gap-1">
-                    <div className='ad-cate'>cars</div>
-                    <div className='ad-cate'>Home & Garden</div>
-                    <div className='ad-cate'>Sporting Goods</div>
-                    <div className='ad-cate'>Electronics</div>
-                  </div>
+
+                  <Swiper
+                    spaceBetween={50}
+                    slidesPerView={3}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                  >
+                    <SwiperSlide><div className='ad-cate'>Cars</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Electronics</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Home & Garden</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Fashion</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Sporting Goods</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Toys</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Real Estate</div></SwiperSlide>
+                    <SwiperSlide><div className='ad-cate'>Services</div></SwiperSlide>
+                  </Swiper>
                 </div>
+
               </div>
               <div className="col-6">
                 <AddImage />
-              </div>  
+              </div>
             </div>
-            <div className="d-flex justify-content-around">
-              <button onClick={handleClose}>save</button>
+
+            <div className='line mt-5'></div>
+            <div className="d-flex justify-content-around" style={{ padding: "27px" }}>
+              <button onClick={handleClose} style={{ color: "#2C3066", fontSize: "18px", fontWeight: "500" }}>Save</button>
               <button onClick={handleClose}>cancel</button>
             </div>
           </Modal>
-
         </div>
       </div>
     </div>
-    // <><h5>fuyfyufhv</h5></>
   )
 }
 

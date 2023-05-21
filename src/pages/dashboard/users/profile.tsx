@@ -1,20 +1,18 @@
 import ButtonPrint from '@/components/common/ButtonPrint';
 import Search from '@/components/common/Search';
 import Seo from '@/components/common/seo'
-import Breadcrumbs from '@/components/products/Breadcrumb ';
+// import Breadcrumbs from '@/components/products/Breadcrumb ';
+import Breadcrumbs from '@/components/common/BreadCrumb';
 import InputControl from '@/components/common/inputControl';
 import { useRouter } from 'next/router';
 import React from 'react'
+import { Crumbs } from '@/data/crumbs';
+
+const data: Crumbs[] = [{ title: "users", to: "/dashboard/users", active: false },
+     { title: "profile", to: "/dashboard/profile", active: true },
+]
 
 const Profile = () => {
-    let router = useRouter();
-    let url = router.route.slice(10).replace("/products", "");
-    let data = "";
-    if (!url) {
-        data = "";
-    } else {
-        data = url;
-    }
     return (
         <div className='profile'>
 
@@ -22,8 +20,10 @@ const Profile = () => {
 
                 <Seo pageTitle="profile" />
 
+                
+                <Breadcrumbs data={data}/>
                 {/* ------ Bread Crumb -------*/}
-                <Breadcrumbs data={data} />
+                {/* <Breadcrumbs data={data} /> */}
 
                 {/*------- Search ------*/}
                 <Search />

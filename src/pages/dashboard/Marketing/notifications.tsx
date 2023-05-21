@@ -1,6 +1,6 @@
 import React from "react";
 import Seo from "@/components/common/seo";
-import Breadcrumbs from "@/components/products/Breadcrumb ";
+// import Breadcrumbs from "@/components/products/Breadcrumb ";
 import Search from "@/components/common/Search";
 import { useRouter } from "next/router";
 import ButtonPrint from "@/components/common/ButtonPrint";
@@ -9,15 +9,12 @@ import Select from "@/components/common/Select";
 import Table from "@/components/products/Table";
 import { productsNav } from "@/data/products";
 import Inputdata from "@/components/common/Inputdata";
+import Breadcrumbs from "@/components/common/BreadCrumb";
+import { Crumbs } from '@/data/crumbs';
+
+const data: Crumbs[] = [{ title: "marketing", to: "marketing", active: false }, 
+{ title: "Notifications", to: "marketing/notifications", active: true }]
 const Notifications = () => {
-  let router = useRouter();
-  let url = router.route.slice(10).replace("/products", "");
-  let data = "";
-  if (!url) {
-    data = "";
-  } else {
-    data = url;
-  }
   return (
     <div>
       <div className="m-4">
@@ -30,7 +27,14 @@ const Notifications = () => {
         <Search />
 
         {/* box  */}
-        <div style={{background: 'rgba(248, 249, 250, 1)', padding:"24px", borderRadius: "10px"}} className="mb-4">
+        <div
+          style={{
+            background: "rgba(248, 249, 250, 1)",
+            padding: "24px",
+            borderRadius: "10px",
+          }}
+          className="mb-4"
+        >
           <div className="row">
             <div className="col-6">
               <Inputdata
@@ -56,8 +60,18 @@ const Notifications = () => {
               />
             </div>
             <div className="col-6">
-              <p style={{fontSize:"16px", fontWeight:"500"}}>Offer notice</p>
-              <textarea style={{width:"100%", background:"transparent", border:"1px solid rgba(230, 237, 255, 1)", height:"80%", padding:"10px"}}>
+              <p style={{ fontSize: "16px", fontWeight: "500" }}>
+                Offer notice
+              </p>
+              <textarea
+                style={{
+                  width: "100%",
+                  background: "transparent",
+                  border: "1px solid rgba(230, 237, 255, 1)",
+                  height: "80%",
+                  padding: "10px",
+                }}
+              >
                 Notification content
               </textarea>
             </div>
@@ -65,7 +79,7 @@ const Notifications = () => {
         </div>
 
         <div>
-           <ButtonPrint data="send" />
+          <ButtonPrint data="send" />
         </div>
 
         {/* table */}
