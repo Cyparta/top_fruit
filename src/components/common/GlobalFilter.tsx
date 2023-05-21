@@ -47,11 +47,11 @@ function GlobalFilter({
             onChange={(e) => setFilter(e.target.value)}
             value={filter || ""}
           >
-            {data
-              ?.filter((ele) => ele[selectvalue])
-              .map((elem) => {
-                return <option> {elem[selectvalue]}</option>;
-              })}
+            {[...new Set(data?.map((ele) => ele[selectvalue]))]
+              .filter((val) => val)
+              .map((val, index) => (
+                <option key={index}>{val}</option>
+              ))}
           </select>
         </div>
       ) : (

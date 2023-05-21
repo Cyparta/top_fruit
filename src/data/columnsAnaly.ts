@@ -39,7 +39,7 @@ export const columsAnalysics = [
     accessor: "total",
   },
 ];
-export interface Product {
+export interface Revenue {
   date: string;
   orders: string;
   total_sales: number;
@@ -48,48 +48,51 @@ export interface Product {
   net_sales: string;
   taxes: string;
   shipping: string;
-  total:string
+  total: string;
 }
-export let productsNav: Product[] = [
+export let revenuedata: Revenue[] = [
   {
     date: "1/2",
     orders: "#12594",
     total_sales: 324,
-    coupons: "Tomato";
-    returns: "Yes";
-    net_sales: string;
-    taxes: string;
-    shipping: string;
-    total:string
+    coupons: "Tomato",
+    returns: "Yes",
+    net_sales: "6835 SAR",
+    taxes: "300",
+    shipping: "6835 SAR",
+    total: "300 Kilo",
   },
   {
-    no: 2,
-    sku: "#12594",
-    category: "fruits",
-    product_name: "Aomato",
-    country_of_origin: "local",
-    amount: "500 Kilo",
-    items_sold: "sold",
-    price: "545412 SAR",
+    date: "2/2",
+    orders: "#12594",
+    total_sales: 324,
+    coupons: "Tomato",
+    returns: "No",
+    net_sales: "6835 SAR",
+    taxes: "300",
+    shipping: "6835 SAR",
+    total: "300 Kilo",
   },
   {
-    no: 3,
-    sku: "#12594",
-    category: "fruits",
-    product_name: "Bomato",
-    country_of_origin: "local",
-    items_sold: "sold",
-    amount: "300 Kilo",
-    price: "545412 SAR",
+    date: "3/2",
+    orders: "#12594",
+    total_sales: 524,
+    coupons: "Tomato",
+    returns: "Yes",
+    net_sales: "6835 SAR",
+    taxes: "300",
+    shipping: "6835 SAR",
+    total: "300 Kilo",
   },
   {
-    no: 1,
-    sku: "#12594",
-    category: "fruits",
-    product_name: "Tomato",
-    country_of_origin: "local",
-    items_sold: "sold",
-    amount: "200 Kilo",
-    price: "545412 SAR",
+    date: "4/2",
+    orders: "#12594",
+    total_sales: 424,
+    coupons: "Tomato",
+    returns: "No",
+    net_sales: "6835 SAR",
+    taxes: "300",
+    shipping: "6835 SAR",
+    total: "300 Kilo",
   },
 ];

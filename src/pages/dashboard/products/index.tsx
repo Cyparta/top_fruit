@@ -33,7 +33,7 @@ function index() {
           </div>
 
           {/* <Table data={productsNav} /> */}
-          <Table columsresult={columsProducts} data={productsNav} />
+          <Table columsresult={columsProducts} data={productsNav} selectvalue="category"/>
         </div>
         <div className="spancolor p-2">
           Showing {productsNav.length} of {productsNav.length} Results
