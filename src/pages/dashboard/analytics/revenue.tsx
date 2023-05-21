@@ -6,7 +6,7 @@ import Table from "@/components/common/Table";
 // import Table from "@/components/common/Table";
 import Seo from "@/components/common/seo";
 import { columsAnalysics, revenuedata } from "@/data/columnsAnaly";
-import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
+import { breadcrumdsname, mainnav } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
 import React from "react";
 // import { Table } from "react-bootstrap";
@@ -19,6 +19,7 @@ function revenue() {
   let data = "";
   if (!url) {
     dispatch(breadcrumdsname("analytics"));
+    dispatch(mainnav("analytics"));
     data = "";
   } else {
     url = url.replace("/", "");
@@ -42,6 +43,9 @@ function revenue() {
             data={revenuedata}
             selectvalue="returns"
           />
+        </div>
+        <div className="spancolor p-2">
+          Showing {revenuedata.length} of {revenuedata.length} Results
         </div>
         <ButtonPrint data="Print" />
       </div>

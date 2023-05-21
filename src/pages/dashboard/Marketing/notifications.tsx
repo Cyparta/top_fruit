@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Seo from "@/components/common/seo";
-// import Breadcrumbs from "@/components/products/Breadcrumb ";
+
 import Search from "@/components/common/Search";
 import { useRouter } from "next/router";
 import ButtonPrint from "@/components/common/ButtonPrint";
-// import InputData from "@/components/common/InputData";
+
 import Select from "@/components/common/Select";
-import Table from "@/components/products/Table";
+
 import { productsNav } from "@/data/products";
 import Inputdata from "@/components/common/Inputdata";
 import Breadcrumbs from "@/components/common/BreadCrumb";
-import { Crumbs } from '@/data/crumbs';
+import { Crumbs } from "@/data/crumbs";
+import { useDispatch } from "react-redux";
+import { breadcrumdsname, mainnav } from "@/features/marketing/marketingSlice";
+import Table from "@/components/common/Table";
+import { notificationAnalysics, notificationdata } from "@/data/marketing";
 
-const data: Crumbs[] = [{ title: "marketing", to: "marketing", active: false }, 
-{ title: "Notifications", to: "marketing/notifications", active: true }]
+const data: Crumbs[] = [
+  { title: "marketing", to: "marketing", active: false },
+  { title: "Notifications", to: "marketing/notifications", active: true },
+];
 const Notifications = () => {
+  let dispatch = useDispatch();
+  let router = useRouter();
+  let url = router.route.slice(10).replace("/marketing", "");
+  let dataurl = "";
+  if (!url) {
+    dispatch(breadcrumdsname("marketing"));
+    dispatch(mainnav("marketing"));
+
+    dataurl = "";
+  } else {
+    url = url.replace("/", "");
+
+    dispatch(breadcrumdsname(url));
+    dispatch(mainnav("marketing"));
+
+    dataurl = url;
+  }
+  useEffect(() => {
+    dispatch(mainnav("marketing"));
+  }, []);
   return (
     <div>
       <div className="m-4">
@@ -33,7 +59,6 @@ const Notifications = () => {
             padding: "24px",
             borderRadius: "10px",
           }}
-          className="mb-4"
         >
           <div className="row">
             <div className="col-6">
@@ -78,24 +103,20 @@ const Notifications = () => {
           </div>
         </div>
 
-        <div>
+        <div className="d-flex justify-content-center">
           <ButtonPrint data="send" />
         </div>
 
         {/* table */}
         <div className="stylerow row">
-          <div className="col-12 col-md-6 col-lg-6">
-            <h3 className="colorblue mb-5">All Products</h3>
-          </div>
-          <div className="col-12 col-md-6 col-lg-6 row">
-            <div className="col-12 col-md-6 col-lg-6">
-              <Search />
-            </div>
-            <div className="col-12 col-md-6 col-lg-6">
-              <Select />
-            </div>
-          </div>
-          <Table data={productsNav} />
+          <Table
+            data={notificationdata}
+            columsresult={notificationAnalysics}
+            selectvalue="time"
+          />
+        </div>
+        <div className="spancolor p-2">
+          Showing {notificationdata.length} of {notificationdata.length} Results
         </div>
         {/* print */}
         <ButtonPrint data="print" />

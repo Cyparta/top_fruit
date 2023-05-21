@@ -7,7 +7,7 @@ import Seo from "@/components/common/seo";
 import { columsProductsinanalys } from "@/data/columsProduct";
 // import Table from "@/components/products/Table";
 import { productsNav } from "@/data/products";
-import { breadcrumdsname } from "@/features/analytics/analyticsSlice";
+import { breadcrumdsname, mainnav } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch } from "react-redux";
@@ -19,6 +19,8 @@ function index() {
   let data = "";
   if (!url) {
     dispatch(breadcrumdsname("analytics"));
+    dispatch(mainnav("analytics"))
+
     data = "";
   } else {
     dispatch(breadcrumdsname(url));

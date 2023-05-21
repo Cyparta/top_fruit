@@ -1,7 +1,32 @@
-
 .bluebuttom {
   color: var(--main-color-blue) !important;
 }
 .redbuttom {
   color: red !important;
+}
+.circuit {
+  border-radius: 50%;
+  display: inline-block;
+  // background-color: green;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.styleborder {
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(124, 141, 181, 0.12);
+  padding: 7px;
+  border-radius: 10px;
+}
+td {
+  font-size: 12px;
 }

@@ -10,8 +10,8 @@ const initialState: analyticsinterface = {
   mainnav: "",
 };
 
-export const analyticsSlice = createSlice({
-  name: "analytics",
+export const marketingSlice = createSlice({
+  name: "marketing",
   initialState,
   reducers: {
     clickcard: (state, action) => {
@@ -26,5 +26,5 @@ export const analyticsSlice = createSlice({
   },
 });
 
-export const { clickcard, breadcrumdsname, mainnav } = analyticsSlice.actions;
-export default analyticsSlice.reducer;
+export const { clickcard, breadcrumdsname, mainnav } = marketingSlice.actions;
+export default marketingSlice.reducer;

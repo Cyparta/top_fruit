@@ -40,7 +40,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
     setGlobalFilter,
   } = tableInstance;
   const { globalFilter }: any = state;
-
+  console.log(state);
   return (
     <>
       <GlobalFilter
@@ -66,14 +66,14 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                       scope="col"
                     >
-                      <div className="d-flex justify-content-between align-items-center">
+                      <div className="">
                         {column.render("Header")}
                         {/* {column.canFilter ? (
                         <div>{column.render("Filter")}</div>
                       ) : null} */}
 
                         {/* <div>{column.canFilter && column.Filter}</div> */}
-                        <span>
+                        <span className="m-2">
                           {column.filtercolumn ? (
                             column.isSortedDesc ? (
                               <CgArrowsExchangeAltV />
@@ -103,10 +103,11 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
               prepareRow(row);
               return (
                 <tr {...row.getRowProps()}>
-                  {row.cells.map((cell, index) =>
-                    cell.column.Header !== "Action" ? (
+                  {row.cells.map((cell, index) => {
+                    return cell.column.Header !== "Action" &&
+                      cell.column.Header !== "Status" ? (
                       <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    ) : (
+                    ) : cell.column.Header === "Action" ? (
                       <td>
                         <button
                           className="btn  ml-3"
@@ -123,8 +124,34 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
                           <AiFillDelete className="redbuttom" />
                         </button>
                       </td>
-                    )
-                  )}
+                    ) : cell.column.Header === "Status" ? (
+                      <td>
+                        <span className="styleborder">
+                          {cell.render("Cell").props.value === "Delivered" ||
+                          cell.render("Cell").props.value === "Available" ||
+                          cell.render("Cell").props.value === "Active" ? (
+                            <span className="circuit green"></span>
+                          ) : cell.render("Cell").props.value === "Canceled" ||
+                            cell.render("Cell").props.value ===
+                              "Out of stock" ||
+                            cell.render("Cell").props.value === "blocked" ? (
+                            <span className="circuit red"></span>
+                          ) : cell.render("Cell").props.value === "Pending" ||
+                            cell.render("Cell").props.value ===
+                              "Limited amount" ||
+                            cell.render("Cell").props.value === "Paused" ? (
+                            <span className="circuit yellow"></span>
+                          ) : (
+                            ""
+                          )}
+                          <span>{cell.render("Cell")}</span>
+                        </span>
+                      </td>
+                    ) : (
+                      ""
+                      // <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    );
+                  })}
                 </tr>
               );
             }

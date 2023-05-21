@@ -11,6 +11,7 @@ import {
   Legend,
   Line,
   LineChart,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -48,50 +49,46 @@ function Chart({ data, title }: chartprops) {
     <div className="stylerow mt-2">
       <h3 className="mb-5">{title}</h3>
       <div className="row align-items-center">
-        <div className="col-sm-8 d-flex justify-content-between">
-          <div className="col-sm-6">
+        <div className="col-sm-9 d-flex justify-content-evenly">
+          <div className="col-sm-5">
             <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">
-                  <CiCalendarDate id="button-addon2" className=" p-2" />
-                </span>
-              </div>
               <input
                 type="text"
                 className="form-control"
-                placeholder="start data"
-                aria-label="startdata"
-                aria-describedby="basic-addon1"
+                placeholder="start date"
               />
+              <div className="input-group-prepend">
+                <span className="styletextintable">
+                  <CiCalendarDate id="button-addon2" />
+                </span>
+              </div>
             </div>
           </div>
-          <div className="col-sm-6 ml-3">
+          <div className="col-sm-5 ml-3">
             <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">
-                  <CiCalendarDate id="button-addon2" className=" p-2" />
-                </span>
-              </div>
               <input
                 type="text"
                 className="form-control"
-                placeholder="end data"
-                aria-label="enddata"
-                aria-describedby="basic-addon1"
+                placeholder="end date"
               />
+              <div className="input-group-prepend">
+                <span className="styletextintable">
+                  <CiCalendarDate id="button-addon2" />
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-sm-4 d-flex justify-content-end align-items-center">
+        <div className="col-sm-3 d-flex justify-content-end align-items-center">
           <button
-            className="iconstyle btn iconstylebackgroundgreen"
+            className="iconstyle btn iconstylebackgroundgreen marginlefttobuttom"
             id="line"
             onClick={(e) => handleClick("line", e)}
           >
             <RiLineChartLine />
           </button>
           <button
-            className="iconstyle btn  ml-3"
+            className="iconstyle btn  ml-3 marginlefttobuttom"
             id="bar"
             onClick={(e) => handleClick("bar", e)}
           >
@@ -100,48 +97,47 @@ function Chart({ data, title }: chartprops) {
         </div>
       </div>
       {typeofchart === "line" ? (
-        <LineChart
-          width={1100}
-          height={200}
-          data={data}
-          margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-        >
-          <XAxis dataKey="month" />
-          <YAxis dataKey="value" />
-          <Tooltip />
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart
+            data={data}
+            margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+          >
+            <XAxis dataKey="month" />
+            <YAxis dataKey="value" />
+            <Tooltip />
 
-          <CartesianGrid strokeDasharray="3 3" />
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          <Tooltip />
-          {/* <Legend /> */}
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="#9897D0"
-            activeDot={{ r: 8 }}
-           
-          />
-          {/* <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
+            <CartesianGrid strokeDasharray="3 3" />
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+            <Tooltip />
+            {/* <Legend /> */}
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke="#9897D0"
+              activeDot={{ r: 8 }}
+            />
+            {/* <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
   <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} /> */}
-        </LineChart>
+          </LineChart>
+        </ResponsiveContainer>
       ) : (
-        <BarChart
-          width={1100}
-          height={200}
-          data={data}
-          margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-        >
-          <XAxis dataKey="month" />
-          <YAxis dataKey="value" />
-          <Tooltip />
-          <CartesianGrid strokeDasharray="3 3" />
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          <Tooltip />
-          {/* <Legend /> */}
-          <Bar dataKey="value" fill="#9897D0" />
-          {/* <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart
+            data={data}
+            margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+          >
+            <XAxis dataKey="month" />
+            <YAxis dataKey="value" />
+            <Tooltip />
+            <CartesianGrid strokeDasharray="3 3" />
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+            <Tooltip />
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#9897D0" />
+            {/* <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
   <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} /> */}
-        </BarChart>
+          </BarChart>
+        </ResponsiveContainer>
       )}
     </div>
   );

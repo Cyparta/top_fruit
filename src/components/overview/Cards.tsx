@@ -5,7 +5,6 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { FiUsers } from "react-icons/fi";
 function Cards() {
-  console.log(overviewNumber);
   return (
     <>
       <div className="row stylerow">

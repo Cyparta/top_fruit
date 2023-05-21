@@ -5,14 +5,20 @@ import Seo from '@/components/common/seo'
 import Breadcrumbs from '@/components/common/BreadCrumb';
 import InputControl from '@/components/common/inputControl';
 import { useRouter } from 'next/router';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Crumbs } from '@/data/crumbs';
+import { useDispatch } from 'react-redux';
+import { mainnav } from '@/features/analytics/analyticsSlice';
 
 const data: Crumbs[] = [{ title: "users", to: "/dashboard/users", active: false },
      { title: "profile", to: "/dashboard/profile", active: true },
 ]
 
 const Profile = () => {
+    let dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(mainnav("users"));
+  }, []);
     return (
         <div className='profile'>
 

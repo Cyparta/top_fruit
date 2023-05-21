@@ -30,6 +30,7 @@ function Appearpart({ data, name }: Appearpartprops) {
       item.classList.remove("active");
     }
     (e.target as HTMLAnchorElement).classList.add("active");
+    console.log(item)
     router.push(item);
   }
   return (
