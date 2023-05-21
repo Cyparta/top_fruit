@@ -18,7 +18,6 @@ function addproduct() {
     url = url.replace("/", "");
     data = url;
   }
- 
   return (
     <>
       <div className="add_product">

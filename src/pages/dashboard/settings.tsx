@@ -1,31 +1,28 @@
 import Search from '@/components/common/Search';
 import Seo from '@/components/common/seo';
-import Breadcrumbs from '@/components/products/Breadcrumb ';
+// import Breadcrumbs from '@/components/products/Breadcrumb ';
+import Breadcrumbs from '@/components/common/BreadCrumb';
 import Tabs from '@/components/settings/tabs';
 import { useRouter } from 'next/router';
 import React from 'react'
-
+import Link from 'next/link';
 function settings() {
-  let router = useRouter();
-  let url = router.route.slice(10).replace("/products", "");
-  let data = "";
-  if (!url) {
-    data = "";
-  } else {
-    data = url;
-  }
   return (
     <>
       <div className='settings'>
         <Seo pageTitle="Products" />
         <div className='m-5'>
           {/* ------ Bread Crumb -------*/}
-          <Breadcrumbs data={data} />
+          {/* <Breadcrumbs data={data} /> */}
+          {/* <Breadcrumbs data={data}/> */}
+          <Link href="/dashboard/settings" style={{ fontSize: "12px !important", textDecoration: "none", margin: "20px 0px", display: 'inline-block', fontWeight: "400", color: "#121212" }}>
+            Settings
+          </Link>
           {/*------- Search ------*/}
           <Search />
           {/*------- main Section ------*/}
           <div>
-            <h3 className="colorblue">Settings</h3>
+            <h3 className="colorblue mt-4">Settings</h3>
             <div className="line mb-4"></div>
             <Tabs />
           </div>

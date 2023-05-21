@@ -26,9 +26,9 @@
         background-color: #D8EEDC;
         padding:8px;
         border-radius: 6px;
-        color:#000;
         cursor: pointer;
         color: #121212;
+        // display: inline-block;
     }
     .modal-content {
         padding: 20px;
@@ -51,4 +51,19 @@
         padding: 10px;
         border-bottom: 1px solid #E6EDFF;
     }
+}
+
+.swiper-slide {
+    margin-right: 10px !important;
+    width: auto !important;
+
+}
+.swiper-slide .swiper-slide-next {
+    width: auto !important;
+     margin-right: 10px !important;
+}
+
+.swiper-slide-active {
+    width: auto !important;
+    margin-right: 10px !important;
 }
