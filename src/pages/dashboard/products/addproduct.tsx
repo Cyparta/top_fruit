@@ -5,7 +5,7 @@ import Search from "@/components/common/Search";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import AddImage from "@/components/products/AddImage";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 
 function addproduct() {
   let router = useRouter();

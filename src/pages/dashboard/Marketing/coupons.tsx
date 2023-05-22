@@ -19,7 +19,7 @@ import Cards from "@/components/marketing/card";
 import Table from "@/components/common/Table";
 import { conponsAnalysics, coupondata } from "@/data/marketing";
 import { conponsanalytics, conponsresult } from "@/data/marketingcarde";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 
 const data: Crumbs[] = [
   { title: "marketing", to: "marketing", active: false },

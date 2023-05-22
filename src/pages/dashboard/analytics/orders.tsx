@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Cards from "@/components/analytics/Cards";
 import Search from "@/components/common/Search";
 import Table from "@/components/common/Table";
@@ -11,7 +11,7 @@ import React from "react";
 
 import { useDispatch } from "react-redux";
 
-function orders() {
+function Orders() {
   let router = useRouter();
   let dispatch = useDispatch();
   let url = router.route.slice(10).replace("/analytics", "");
@@ -51,4 +51,4 @@ function orders() {
   );
 }
 
-export default orders;
+export default Orders;

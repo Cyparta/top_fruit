@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import ButtonPrint from "@/components/common/ButtonPrint";
 import Inputdata from "@/components/common/Inputdata";
 import Search from "@/components/common/Search";

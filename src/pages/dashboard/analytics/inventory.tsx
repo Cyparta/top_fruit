@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import ButtonPrint from "@/components/common/ButtonPrint";
 import Search from "@/components/common/Search";
 import Table from "@/components/common/Table";
@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch } from "react-redux";
 
-function inventory() {
+function Inventory() {
   let router = useRouter();
   let dispatch = useDispatch();
   let url = router.route.slice(10).replace("/analytics", "");
@@ -48,4 +48,4 @@ function inventory() {
   );
 }
 
-export default inventory;
+export default Inventory;

@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Cards from "@/components/analytics/Cards";
 import Search from "@/components/common/Search";
 import Select from "@/components/common/Select";
@@ -9,23 +9,26 @@ import { columsProductsinanalys } from "@/data/columsProduct";
 import { productsNav } from "@/data/products";
 import { breadcrumdsname, mainnav } from "@/features/analytics/analyticsSlice";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 function index() {
   let router = useRouter();
   let dispatch = useDispatch();
-  let url = router.route.slice(10).replace("/analytics", "");
-  let data = "";
-  if (!url) {
-    dispatch(breadcrumdsname("analytics"));
-    dispatch(mainnav("analytics"));
+  let [data, setdata] = useState("");
+  useEffect(() => {
+    let url = router.route.slice(10).replace("/analytics", "");
 
-    data = "";
-  } else {
-    dispatch(breadcrumdsname(url));
-    data = url;
-  }
+    if (!url) {
+      dispatch(breadcrumdsname("analytics"));
+      dispatch(mainnav("analytics"));
+
+      setdata("");
+    } else {
+      dispatch(breadcrumdsname(url));
+      setdata(url);
+    }
+  });
   return (
     <>
       <Seo pageTitle="analytics" />

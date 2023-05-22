@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { IoMdAdd } from "react-icons/io";
 import Table from "@/components/common/Table";
 import { usercolumns, userresult } from "@/data/user";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 
 const data: Crumbs[] = [
   { title: "users", to: "/dashboard/users", active: false },

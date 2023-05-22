@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 import { breadcrumdsname, mainnav } from "@/features/marketing/marketingSlice";
 import Table from "@/components/common/Table";
 import { notificationAnalysics, notificationdata } from "@/data/marketing";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 // import Breadcrumbs from "@/components/marketing/Breadcrumb ";
 
 const data: Crumbs[] = [

@@ -1,21 +1,31 @@
-import Search from '@/components/common/Search';
-import Seo from '@/components/common/seo';
+import Search from "@/components/common/Search";
+import Seo from "@/components/common/seo";
 // import Breadcrumbs from '@/components/products/Breadcrumb ';
-import Breadcrumbs from '@/components/common/BreadCrumb';
-import Tabs from '@/components/settings/tabs';
-import { useRouter } from 'next/router';
-import React from 'react'
-import Link from 'next/link';
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
+import Tabs from "@/components/settings/tabs";
+import { useRouter } from "next/router";
+import React from "react";
+import Link from "next/link";
 function settings() {
   return (
     <>
-      <div className='settings'>
+      <div className="settings">
         <Seo pageTitle="Products" />
-        <div className='m-5'>
+        <div className="m-5">
           {/* ------ Bread Crumb -------*/}
           {/* <Breadcrumbs data={data} /> */}
           {/* <Breadcrumbs data={data}/> */}
-          <Link href="/dashboard/settings" style={{ fontSize: "12px !important", textDecoration: "none", margin: "20px 0px", display: 'inline-block', fontWeight: "400", color: "#121212" }}>
+          <Link
+            href="/dashboard/settings"
+            style={{
+              fontSize: "12px !important",
+              textDecoration: "none",
+              margin: "20px 0px",
+              display: "inline-block",
+              fontWeight: "400",
+              color: "#121212",
+            }}
+          >
             Settings
           </Link>
           {/*------- Search ------*/}
@@ -29,7 +39,7 @@ function settings() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default settings
+export default settings;

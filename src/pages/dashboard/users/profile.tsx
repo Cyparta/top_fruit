@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { Crumbs } from "@/data/crumbs";
 import { useDispatch } from "react-redux";
 import { mainnav } from "@/features/analytics/analyticsSlice";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 
 // const data: Crumbs[] = [{ title: "users", to: "/dashboard/users", active: false },
 //      { title: "profile", to: "/dashboard/profile", active: true },

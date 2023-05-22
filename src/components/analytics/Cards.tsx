@@ -23,7 +23,7 @@ import Icontocard from "./Icontocard";
 import Icontoorders from "./Icontoorders";
 import Icontotax from "./Icontotax";
 function Cards() {
-  let { name } = useSelector((state) => state.analytics);
+  let { name } = useSelector((state: any) => state.analytics);
   let [result, setresult] = useState([] as analyticsinterface[]);
   let [chartresult, setcharresult] = useState([] as any[]);
 

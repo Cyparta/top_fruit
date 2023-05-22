@@ -59,36 +59,40 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <button
-            onClick={() => onclickbuttom("/dashboard/products")}
+          <Link
+            // onClick={() => onclickbuttom("/dashboard/products")
+            href={"/dashboard/products"}
             className="w-100"
           >
             <Appearpart data={productsNav} name="Products" />
-          </button>
+          </Link>
         </li>
         <li>
-          <button
-            onClick={() => onclickbuttom("/dashboard/analytics")}
+          <Link
+            // onClick={() => onclickbuttom("/dashboard/analytics")}
+            href={"/dashboard/analytics"}
             className=" w-100"
           >
             <Appearpart data={analyticsNav} name="Analytics" />
-          </button>
+          </Link>
         </li>
         <li>
-          <button
-            onClick={() => onclickbuttom("/dashboard/marketing")}
+          <Link
+            // onClick={() => onclickbuttom("/dashboard/marketing")}
+            href={"/dashboard/marketing"}
             className=" w-100"
           >
             <Appearpart data={MarketingNav} name="Marketing" />
-          </button>
+          </Link>
         </li>
         <li>
-          <button onClick={() => onclickbuttom("/dashboard/users")} className=" w-100">
+          <Link href={"/dashboard/users"} className=" w-100">
             <Appearpart data={usersNav} name="Users" />
-          </button>
+          </Link>
         </li>
         <li>
-          <button
+          <Link
+            href={"/dashboard/settings"}
             // onClick={() => onclickbuttom("/dashboard/settings")}
             className="d-flex align-items-center mb-3  w-100"
             onClick={(e) => onclickofproduct(e, "/dashboard/settings")}
@@ -103,7 +107,7 @@ function Nav() {
               id="settingsicon"
             />
             <div className="m-0">Settings</div>
-          </button>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Table from "@/components/common/Table";
 import { columsProducts } from "@/data/columsProduct";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 // import Breadcrumbs from "@/components/common/BreadCrumb";
 // import {Tab as Table} from "@/components/common/Table";
 // import { Breadcrumb } from ";

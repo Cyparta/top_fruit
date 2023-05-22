@@ -11,9 +11,9 @@ function Table({ data }: tableprops) {
     <table className="table" data-bs-filter-control="true">
       <thead>
         <tr>
-          {headeroftable.map((ele) => {
+          {headeroftable.map((ele, index) => {
             return (
-              <th scope="col" data-bs-field={ele}>
+              <th scope="col" data-bs-field={ele} key={index}>
                 {ele}
               </th>
             );
@@ -24,7 +24,7 @@ function Table({ data }: tableprops) {
         </tr>
       </thead>
       <tbody>
-        {data.map((ele) => {
+        {data.map((ele, index) => {
           return (
             <Contentoftable
               no={ele.no}
@@ -34,6 +34,7 @@ function Table({ data }: tableprops) {
               country_of_origin={ele.country_of_origin}
               amount={ele.amount}
               price={ele.price}
+              key={index}
             />
           );
         })}

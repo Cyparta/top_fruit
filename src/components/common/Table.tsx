@@ -42,20 +42,23 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
   } = tableInstance;
   const { globalFilter }: any = state;
   console.log(state);
-  let { name, mainnav } = useSelector((state) => state.analytics);
+  let { name, mainnav } = useSelector((state:any) => state.analytics);
   console.log(name, mainnav);
   return (
     <>
       <div className="col-12 col-md-6 col-lg-6 row">
         <div className="col-12 col-md-6 col-lg-6">
           {headerGroups.map(
-            (headerGroup: {
-              getHeaderGroupProps: () => React.JSX.IntrinsicAttributes &
-                React.ClassAttributes<HTMLTableRowElement> &
-                React.HTMLAttributes<HTMLTableRowElement>;
-              headers: any[];
-            }) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
+            (
+              headerGroup: {
+                getHeaderGroupProps: () => React.JSX.IntrinsicAttributes &
+                  React.ClassAttributes<HTMLTableRowElement> &
+                  React.HTMLAttributes<HTMLTableRowElement>;
+                headers: any[];
+              },
+              index
+            ) => (
+              <tr {...headerGroup.getHeaderGroupProps()} key={index}>
                 {headerGroup.headers.map((column) => {
                   return (
                     <>
@@ -93,18 +96,22 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map(
-            (headerGroup: {
-              getHeaderGroupProps: () => React.JSX.IntrinsicAttributes &
-                React.ClassAttributes<HTMLTableRowElement> &
-                React.HTMLAttributes<HTMLTableRowElement>;
-              headers: any[];
-            }) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => {
+            (
+              headerGroup: {
+                getHeaderGroupProps: () => React.JSX.IntrinsicAttributes &
+                  React.ClassAttributes<HTMLTableRowElement> &
+                  React.HTMLAttributes<HTMLTableRowElement>;
+                headers: any[];
+              },
+              index
+            ) => (
+              <tr {...headerGroup.getHeaderGroupProps()} key={index}>
+                {headerGroup.headers.map((column, index) => {
                   return (
                     <th
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                       scope="col"
+                      key={index}
                     >
                       <div className="">
                         {column.render("Header")}
@@ -136,15 +143,18 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
 
         <tbody {...getTableBodyProps()}>
           {rows.map(
-            (row: {
-              getRowProps: () => React.JSX.IntrinsicAttributes &
-                React.ClassAttributes<HTMLTableRowElement> &
-                React.HTMLAttributes<HTMLTableRowElement>;
-              cells: any[];
-            }) => {
+            (
+              row: {
+                getRowProps: () => React.JSX.IntrinsicAttributes &
+                  React.ClassAttributes<HTMLTableRowElement> &
+                  React.HTMLAttributes<HTMLTableRowElement>;
+                cells: any[];
+              },
+              index
+            ) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()}>
+                <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     return cell.column.Header !== "Action" &&
                       cell.column.Header !== "Status" ? (

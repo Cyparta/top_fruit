@@ -9,7 +9,7 @@ import { Crumbs } from "@/data/crumbs";
 
 import { useDispatch } from "react-redux";
 import { mainnav } from "@/features/analytics/analyticsSlice";
-import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
 import Breadcrumbsthrid from "@/components/common/Breadcrumbthird";
