@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Breadcrumbs from "@/components/common/BreadCrumb";
+// import Breadcrumbs from "@/components/common/BreadCrumb";
 import InputControl from "@/components/common/inputControl";
 import Tabs from "@/components/marketing/tabs";
 import { Crumbs } from "@/data/crumbs";
@@ -9,6 +9,9 @@ import { useRouter } from "next/router";
 import Search from "@/components/common/Search";
 import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
+// import Breadcrumbs from "@/components/common/Breadcrumb";
+import Breadcrumbsthrid from "@/components/common/Breadcrumbthird";
+// import Breadcrumbs from "@/components//Breadcrumb ";
 
 const data: Crumbs[] = [
   { title: "marketing", to: "marketing", active: false },
@@ -37,7 +40,13 @@ const AddNewCoupons = () => {
   return (
     <div className="marketing">
       <div className="m-4">
-        <Breadcrumbs data={data} />
+        {/* <Breadcrumbs data={data} /> */}
+        <Breadcrumbsthrid
+          data={dataurl}
+          maintwo="coupons"
+          mainnav="marketing"
+        />
+
         <Search />
         <Link href="/dashboard/marketing/coupons">
           <HiArrowLeft className="styletoarrow" />

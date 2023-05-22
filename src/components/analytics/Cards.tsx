@@ -120,7 +120,7 @@ function Cards() {
         })}
       </div>
       <div className=" mt-5">
-        {chartresult.filter((ele) => ele.id === idele) ? (
+        {idele ? (
           chartresult
             .filter((ele) => ele.id === idele)
             .map((ele, index) => {
@@ -141,7 +141,7 @@ function Cards() {
               );
             })
         ) : (
-          <Chart data={chartresult[0].data} title="Orders" key={0} />
+          <Chart data={dataanalytics[0].data} title="Orders" key={0} />
         )}
       </div>
     </>

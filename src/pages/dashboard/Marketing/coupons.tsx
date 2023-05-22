@@ -7,7 +7,7 @@ import { overviewNumber } from "@/data/overviewnumber";
 import CardCharts from "@/components/common/cardCharts";
 import React, { useEffect } from "react";
 // import Cards from "@/components/analytics/Cards";
-import Breadcrumbs from "@/components/common/BreadCrumb";
+
 import { Crumbs } from "@/data/crumbs";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -19,6 +19,8 @@ import Cards from "@/components/marketing/card";
 import Table from "@/components/common/Table";
 import { conponsAnalysics, coupondata } from "@/data/marketing";
 import { conponsanalytics, conponsresult } from "@/data/marketingcarde";
+import Breadcrumbs from "@/components/common/Breadcrumb";
+
 const data: Crumbs[] = [
   { title: "marketing", to: "marketing", active: false },
   { title: "coupons", to: "marketing/coupons", active: true },
@@ -47,7 +49,8 @@ const Coupons = () => {
   }, []);
   return (
     <div className="m-4">
-      <Breadcrumbs data={data} />
+      <Breadcrumbs data={dataurl} mainnav="marketing" />
+
       <div className="d-flex align-items-center justify-content-between;">
         <Search />
       </div>

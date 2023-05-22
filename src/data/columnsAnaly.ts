@@ -1,7 +1,11 @@
+import ColumnFilter from "@/components/common/ColumFilter";
+import { Column } from "react-table";
+
 export const columsAnalysics = [
   {
     Header: "Date",
     accessor: "date",
+    Filter: ColumnFilter,
     // disableFilter: true,
   },
   {
@@ -22,6 +26,7 @@ export const columsAnalysics = [
   {
     Header: "Returns",
     accessor: "returns",
+    Filter: ColumnFilter,
     // filtercolumn: true,
   },
   {
@@ -101,6 +106,7 @@ export const orderAnalysics = [
     Header: "Date",
     accessor: "date",
     // disableFilter: true,
+    Filter: ColumnFilter,
   },
   {
     Header: "SkU",
@@ -110,7 +116,6 @@ export const orderAnalysics = [
   {
     Header: "Status",
     accessor: "status",
-    // Filter:ColumnFilter
   },
   {
     Header: "Coupons",
@@ -120,6 +125,7 @@ export const orderAnalysics = [
   {
     Header: "client type",
     accessor: "client_type",
+    Filter: ColumnFilter,
     // filtercolumn: true,
   },
   {
@@ -265,7 +271,7 @@ export const inventoryAnalysics = [
   {
     Header: "Status",
     accessor: "status",
-    // Filter: ColumnFilter,
+    Filter: ColumnFilter,
   },
   {
     Header: "Amount",

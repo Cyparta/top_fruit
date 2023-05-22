@@ -1,7 +1,7 @@
 import Search from "@/components/common/Search";
 import Seo from "@/components/common/seo";
 // import Breadcrumbs from '@/components/products/Breadcrumb ';
-import Breadcrumbs from "@/components/common/BreadCrumb";
+// import Breadcrumbs from "@/components/common/BreadCrumb";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import markting from "../../../../public/assets/image/markting/1.png";
@@ -24,11 +24,13 @@ import { useDispatch } from "react-redux";
 // import { mainnav } from "@/features/analytics/analyticsSlice";
 import Table from "@/components/common/Table";
 import { marketingAnalysics, marketingdata } from "@/data/marketing";
-import { breadcrumdsname,mainnav } from "@/features/marketing/marketingSlice";
+import { breadcrumdsname, mainnav } from "@/features/marketing/marketingSlice";
+import Breadcrumbs from "@/components/common/Breadcrumb";
+// import Breadcrumbs from "@/components/marketing/Breadcrumb ";
 
 const data: Crumbs[] = [
-  { title: "marketing", to: "marketing", active: false },
-  { title: "Ads", to: "marketing", active: true },
+  { title: "marketing", to: "", active: false },
+  { title: "Ads", to: "", active: true },
 ];
 
 function index() {
@@ -42,12 +44,10 @@ function index() {
   if (!url) {
     dispatch(breadcrumdsname("marketing"));
     dispatch(mainnav("marketing"));
-
     dataurl = "";
   } else {
     dispatch(breadcrumdsname(url));
     dispatch(mainnav("marketing"));
-
     dataurl = url;
   }
   useEffect(() => {
@@ -61,8 +61,8 @@ function index() {
 
         {/* ------ Bread Crumb -------*/}
         {/* <Breadcrumbs data={data} /> */}
-        <Breadcrumbs data={data} />
-
+        {/* <Breadcrumbs data={dataurl} /> */}
+        <Breadcrumbs data={dataurl} mainnav="marketing" />
         {/*------- Search ------*/}
         <Search />
 
@@ -100,7 +100,7 @@ function index() {
           <h3 className="colorblue mt-5 mb-3">Ad Overview</h3>
           <div className="stylerow row">
             <div className="col-12 col-md-6 col-lg-6">
-              <h3 className="colorblue mb-5">All Products</h3>
+              <h3 className="colorblue mb-5">Ads</h3>
             </div>
 
             <Table

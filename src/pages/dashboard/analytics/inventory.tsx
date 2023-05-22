@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/analytics/Breadcrumb ";
+import Breadcrumbs from "@/components/common/Breadcrumb";
 import ButtonPrint from "@/components/common/ButtonPrint";
 import Search from "@/components/common/Search";
 import Table from "@/components/common/Table";
@@ -27,7 +27,7 @@ function inventory() {
     <>
       <Seo pageTitle="analytics" />
       <div className="m-5">
-        <Breadcrumbs data={data} />
+        <Breadcrumbs data={data} mainnav={"analytics"} />
         <Search />
         <div className="stylerow mt-5 row">
           <div className="col-12 col-md-6 col-lg-6">

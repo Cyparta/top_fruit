@@ -1,23 +1,17 @@
 import React, { use, useEffect, useState } from "react";
 
-import {
+import { analyticsinterface } from "@/data/analyics";
 
-  analyticsinterface,
-  
-} from "@/data/analyics";
-
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Chart from "../common/Chart";
-
-
 import { conponsanalytics, conponsresult } from "@/data/marketingcarde";
 import { CgSearchFound } from "react-icons/cg";
 import { BsFillMapFill } from "react-icons/bs";
 function Cards() {
   let { name } = useSelector((state) => state.marketing);
   let [result, setresult] = useState([] as analyticsinterface[]);
-  let [chartresult, setcharresult] = useState([] as any[]);
+  let [chartresult, setcharresult] = useState(conponsanalytics as any[]);
 
   let [idele, setidele] = React.useState(0);
   function onclickofproduct(
@@ -48,6 +42,7 @@ function Cards() {
       setcharresult(conponsanalytics);
       setresult(conponsresult);
     }
+    console.log(chartresult,result,name);
   }, [result, name]);
   return (
     <>
@@ -90,7 +85,7 @@ function Cards() {
         })}
       </div>
       <div className=" mt-5">
-        {chartresult.filter((ele) => ele.id === idele) ? (
+        {idele? (
           chartresult
             .filter((ele) => ele.id === idele)
             .map((ele, index) => {
@@ -104,7 +99,7 @@ function Cards() {
             })
         ) : (
           <Chart
-            data={chartresult[0].data}
+            data={conponsanalytics[0].data}
             title="Offer valid orders"
             key={0}
           />

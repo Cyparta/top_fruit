@@ -1,11 +1,11 @@
 import Inputdata from "@/components/common/Inputdata";
 import Seo from "@/components/common/seo";
 import Search from "@/components/common/Search";
-import Breadcrumbs from "@/components/products/Breadcrumb ";
+// import Breadcrumbs from "@/components/products/Breadcrumb ";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import AddImage from "@/components/products/AddImage";
-
+import Breadcrumbs from "@/components/common/Breadcrumb";
 
 function addproduct() {
   let router = useRouter();
@@ -24,7 +24,8 @@ function addproduct() {
         <Seo pageTitle="add product" />
 
         <div className="m-5">
-          <Breadcrumbs data={data} />
+          {/* <Breadcrumbs data={data} /> */}
+          <Breadcrumbs data={data} mainnav="products" />
 
           <Search />
           <div className="row align-items-start">
@@ -91,7 +92,7 @@ function addproduct() {
               </button>
             </div>
             <div className="col-12 col-md-4 col-lg-4  styletoaddphoto">
-              <AddImage/>
+              <AddImage />
 
               <Inputdata
                 title="Product Number"

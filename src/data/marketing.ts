@@ -1,3 +1,5 @@
+import ColumnFilter from "@/components/common/ColumFilter";
+
 export const marketingAnalysics = [
   {
     Header: "No",
@@ -8,6 +10,7 @@ export const marketingAnalysics = [
     Header: "Date",
     accessor: "date",
     filtercolumn: true,
+    Filter: ColumnFilter,
   },
   {
     Header: "Abs Name",
@@ -20,11 +23,12 @@ export const marketingAnalysics = [
     Header: "Ad Category",
     accessor: "ad_category",
     filtercolumn: true,
-    // Filter: ColumnFilter,
   },
   {
     Header: "Status",
     accessor: "status",
+    Filter: ColumnFilter,
+
     // filtercolumn: true,
   },
   {
@@ -91,6 +95,7 @@ export const conponsAnalysics = [
   {
     Header: "Coupon type",
     accessor: "coupon_type",
+    Filter: ColumnFilter,
   },
   {
     Header: "times of use",
@@ -163,6 +168,7 @@ export const notificationAnalysics = [
   {
     Header: "time",
     accessor: "time",
+    Filter: ColumnFilter,
   },
   {
     Header: "Action",

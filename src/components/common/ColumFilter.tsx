@@ -9,23 +9,33 @@ interface GlobalFilterprops {
   data?: Product[];
 }
 
-function ColumnFilter({ filter, setFilter, data }: GlobalFilterprops) {
+function ColumnFilter({
+  column: { filterValue, setFilter, preFilteredRows, id },
+}) {
+  const options = React.useMemo(() => {
+    const options = new Set();
+    preFilteredRows.forEach((row) => {
+      options.add(row.values[id]);
+    });
+    return [...options.values()];
+  }, [id, preFilteredRows]);
+
+  // Render a multi-select box
   return (
-    <div className="col-12 col-md-6 col-lg-6 row">
-      <div className="col-12 col-md-6 col-lg-6">
-        <select
-          value={filter || ""}
-          onChange={(e) => setFilter(e.target.value)}
-          className="form-control"
-        >
-          {data
-            ?.filter((ele) => ele.category)
-            .map((elem) => {
-              return <option> {elem.category}</option>;
-            })}
-        </select>
-      </div>
-    </div>
+    <select
+      value={filterValue}
+      onChange={(e) => {
+        setFilter(e.target.value || undefined);
+      }}
+      className="form-control"
+    >
+      <option value="">{id}</option>
+      {options.map((option, i) => (
+        <option key={i} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
   );
 }
 

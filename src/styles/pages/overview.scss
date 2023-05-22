@@ -35,10 +35,14 @@
   @extend .styleinputtext;
   left: 85%;
 }
-.marginlefttobuttom{
+.marginlefttobuttom {
   margin-left: 20px;
 }
 .left65 {
   @extend .styleinputtext;
   left: 65%;
+}
+.left80 {
+  @extend .styleinputtext;
+  left: 80%;
 }

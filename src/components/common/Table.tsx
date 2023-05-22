@@ -14,6 +14,7 @@ import { CgArrowsExchangeAltV } from "react-icons/cg";
 import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumFilter";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { useSelector } from "react-redux";
 interface tableprops {
   data: any[];
   columsresult: any[];
@@ -41,15 +42,54 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
   } = tableInstance;
   const { globalFilter }: any = state;
   console.log(state);
+  let { name, mainnav } = useSelector((state) => state.analytics);
+  console.log(name, mainnav);
   return (
     <>
-      <GlobalFilter
-        filter={globalFilter}
-        setFilter={setGlobalFilter}
-        data={data}
-        selectvalue={selectvalue}
-      />
-
+      <div className="col-12 col-md-6 col-lg-6 row">
+        <div className="col-12 col-md-6 col-lg-6">
+          {headerGroups.map(
+            (headerGroup: {
+              getHeaderGroupProps: () => React.JSX.IntrinsicAttributes &
+                React.ClassAttributes<HTMLTableRowElement> &
+                React.HTMLAttributes<HTMLTableRowElement>;
+              headers: any[];
+            }) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => {
+                  return (
+                    <>
+                      {column.canFilter && column.Filter ? (
+                        <th
+                          {...column.getHeaderProps(
+                            column.getSortByToggleProps()
+                          )}
+                          scope="col"
+                          className="col-12 col-md-6 col-lg-6"
+                        >
+                          {/* {column.canFilter ? (
+                        <div>{column.render("Filter")}</div>
+                      ) : null} */}
+                          {column.render("Filter")}
+                          {/* <div>{column.canFilter && column.Filter}</div> */}
+                        </th>
+                      ) : null}
+                    </>
+                  );
+                })}
+              </tr>
+            )
+          )}
+        </div>
+        <div className="col-12 col-md-6 col-lg-6">
+          <GlobalFilter
+            filter={globalFilter}
+            setFilter={setGlobalFilter}
+            data={data}
+            selectvalue={selectvalue}
+          />
+        </div>
+      </div>
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map(
@@ -68,6 +108,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
                     >
                       <div className="">
                         {column.render("Header")}
+
                         {/* {column.canFilter ? (
                         <div>{column.render("Filter")}</div>
                       ) : null} */}
@@ -92,6 +133,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
             )
           )}
         </thead>
+
         <tbody {...getTableBodyProps()}>
           {rows.map(
             (row: {

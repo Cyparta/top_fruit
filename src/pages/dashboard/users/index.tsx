@@ -3,8 +3,6 @@ import Inputdata from "@/components/common/Inputdata";
 import Search from "@/components/common/Search";
 import Select from "@/components/common/Select";
 import Seo from "@/components/common/seo";
-// import Breadcrumbs from "@/components/products/Breadcrumb ";
-import Breadcrumbs from "@/components/common/BreadCrumb";
 
 import { productsNav } from "@/data/products";
 import { useRouter } from "next/router";
@@ -16,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { IoMdAdd } from "react-icons/io";
 import Table from "@/components/common/Table";
 import { usercolumns, userresult } from "@/data/user";
+import Breadcrumbs from "@/components/common/Breadcrumb";
 
 const data: Crumbs[] = [
   { title: "users", to: "/dashboard/users", active: false },
@@ -27,12 +26,21 @@ function index() {
   useEffect(() => {
     dispatch(mainnav("users"));
   }, []);
+  let router = useRouter();
+  let url = router.route.slice(10).replace("/users", "");
+  let data = "";
+  if (!url) {
+    data = "";
+  } else {
+    url = url.replace("/", "");
+    data = url;
+  }
   return (
     <div className="user">
       <Seo pageTitle="users" />
       {/* ------ seatch -------*/}
       <div className="m-5">
-        <Breadcrumbs data={data} />
+        <Breadcrumbs data={data} mainnav="users" />
 
         <div className="d-flex align-items-center justify-content-between;">
           <Search />

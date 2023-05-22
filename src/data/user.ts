@@ -1,3 +1,5 @@
+import ColumnFilter from "@/components/common/ColumFilter";
+
 export const usercolumns = [
   {
     Header: "No",
@@ -31,6 +33,8 @@ export const usercolumns = [
     Header: "Role",
     accessor: "role",
     filtercolumn: true,
+    Filter: ColumnFilter,
+
   },
   {
     Header: "Action",

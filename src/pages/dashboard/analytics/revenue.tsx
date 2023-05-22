@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/analytics/Breadcrumb ";
+import Breadcrumbs from "@/components/common/Breadcrumb";
 import Cards from "@/components/analytics/Cards";
 import ButtonPrint from "@/components/common/ButtonPrint";
 import Search from "@/components/common/Search";
@@ -30,7 +30,7 @@ function revenue() {
     <>
       <Seo pageTitle="analytics" />
       <div className="m-5">
-        <Breadcrumbs data={data} />
+        <Breadcrumbs data={data} mainnav={"analytics"} />
         <Search />
         <Cards />
         {/* <Table data={}/> */}

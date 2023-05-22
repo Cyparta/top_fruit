@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/analytics/Breadcrumb ";
+import Breadcrumbs from "@/components/common/Breadcrumb";
 import Cards from "@/components/analytics/Cards";
 import Search from "@/components/common/Search";
 import Table from "@/components/common/Table";
@@ -27,13 +27,13 @@ function taxes() {
     <>
       <Seo pageTitle="analytics" />
       <div className="m-5">
-        <Breadcrumbs data={data} />
+        <Breadcrumbs data={data} mainnav={"analytics"} />
         <Search />
 
         <Cards />
         <div className="stylerow mt-5 row">
           <div className="col-12 col-md-6 col-lg-6">
-            <h3 className="colorblue mb-5">revenue</h3>
+            <h3 className="colorblue mb-5">taxes</h3>
           </div>
           <Table
             columsresult={taxAnalysics}

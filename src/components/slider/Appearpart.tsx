@@ -30,7 +30,7 @@ function Appearpart({ data, name }: Appearpartprops) {
       item.classList.remove("active");
     }
     (e.target as HTMLAnchorElement).classList.add("active");
-    console.log(item)
+    console.log(item);
     router.push(item);
   }
   return (
@@ -72,21 +72,18 @@ function Appearpart({ data, name }: Appearpartprops) {
           ""
         )}
         <div className="styletoselect">
-          <button
+          <span
             className="colorblue"
-            type="button"
+            
             id="dropdownMenuButton1"
             onClick={(e) => onclickofproduct(e)}
           >
             {name}
-          </button>
+          </span>
           {click ? (
-            <IoIosArrowDown
-              className="ai"
-              onClick={(e) => onclickofproduct(e)}
-            />
+            <IoIosArrowDown className="ai" onClick={() => setclick(!click)} />
           ) : (
-            <IoIosArrowUp className="ai" onClick={(e) => onclickofproduct(e)} />
+            <IoIosArrowUp className="ai" onClick={() => setclick(!click)} />
           )}
         </div>
       </div>

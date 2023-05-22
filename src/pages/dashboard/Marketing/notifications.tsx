@@ -9,15 +9,17 @@ import Select from "@/components/common/Select";
 
 import { productsNav } from "@/data/products";
 import Inputdata from "@/components/common/Inputdata";
-import Breadcrumbs from "@/components/common/BreadCrumb";
+
 import { Crumbs } from "@/data/crumbs";
 import { useDispatch } from "react-redux";
 import { breadcrumdsname, mainnav } from "@/features/marketing/marketingSlice";
 import Table from "@/components/common/Table";
 import { notificationAnalysics, notificationdata } from "@/data/marketing";
+import Breadcrumbs from "@/components/common/Breadcrumb";
+// import Breadcrumbs from "@/components/marketing/Breadcrumb ";
 
 const data: Crumbs[] = [
-  { title: "marketing", to: "marketing", active: false },
+  { title: "marketing", to: "", active: false },
   { title: "Notifications", to: "marketing/notifications", active: true },
 ];
 const Notifications = () => {
@@ -47,9 +49,9 @@ const Notifications = () => {
         <Seo pageTitle="users" />
 
         {/* test breadcrumb */}
-        <Breadcrumbs data={data} />
+        {/* <Breadcrumbs data={data} /> */}
+        <Breadcrumbs data={dataurl} mainnav="marketing" />
 
-        {/* search */}
         <Search />
 
         {/* box  */}

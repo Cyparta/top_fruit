@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/analytics/Breadcrumb ";
+import Breadcrumbs from "@/components/common/Breadcrumb";
 import Cards from "@/components/analytics/Cards";
 import Search from "@/components/common/Search";
 import Select from "@/components/common/Select";
@@ -19,7 +19,7 @@ function index() {
   let data = "";
   if (!url) {
     dispatch(breadcrumdsname("analytics"));
-    dispatch(mainnav("analytics"))
+    dispatch(mainnav("analytics"));
 
     data = "";
   } else {
@@ -30,7 +30,7 @@ function index() {
     <>
       <Seo pageTitle="analytics" />
       <div className="m-5">
-        <Breadcrumbs data={data} />
+        <Breadcrumbs data={data} mainnav={"analytics"} />
         <Search />
         <Cards />
         <div className="stylerow mt-5 row">

@@ -3,12 +3,14 @@ import Select from "@/components/common/Select";
 // import Table from "@/components/products/Table";
 import Seo from "@/components/common/seo";
 import Search from "@/components/common/Search";
-import Breadcrumbs from "@/components/products/Breadcrumb ";
+// import Breadcrumbs from "@/components/common/Breadcrumb ";
 import { productsNav } from "@/data/products";
 import { useRouter } from "next/router";
 import React from "react";
 import Table from "@/components/common/Table";
-import {  columsProducts } from "@/data/columsProduct";
+import { columsProducts } from "@/data/columsProduct";
+import Breadcrumbs from "@/components/common/Breadcrumb";
+// import Breadcrumbs from "@/components/common/BreadCrumb";
 // import {Tab as Table} from "@/components/common/Table";
 // import { Breadcrumb } from ";
 
@@ -25,7 +27,7 @@ function index() {
     <>
       <Seo pageTitle="Products" />
       <div className="m-5">
-        <Breadcrumbs data={data} />
+        <Breadcrumbs data={data} mainnav="products" />
         <Search />
         <div className="stylerow row">
           <div className="col-12 col-md-6 col-lg-6">
@@ -33,7 +35,11 @@ function index() {
           </div>
 
           {/* <Table data={productsNav} /> */}
-          <Table columsresult={columsProducts} data={productsNav} selectvalue="category"/>
+          <Table
+            columsresult={columsProducts}
+            data={productsNav}
+            selectvalue="category"
+          />
         </div>
         <div className="spancolor p-2">
           Showing {productsNav.length} of {productsNav.length} Results

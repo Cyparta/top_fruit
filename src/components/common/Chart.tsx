@@ -97,7 +97,7 @@ function Chart({ data, title }: chartprops) {
         </div>
       </div>
       {typeofchart === "line" ? (
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={200}>
           <LineChart
             data={data}
             margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
@@ -121,7 +121,7 @@ function Chart({ data, title }: chartprops) {
           </LineChart>
         </ResponsiveContainer>
       ) : (
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart
             data={data}
             margin={{ top: 5, right: 20, left: 10, bottom: 5 }}

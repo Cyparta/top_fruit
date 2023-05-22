@@ -23,12 +23,12 @@ export const columsProducts = [
   {
     Header: "Category",
     accessor: "category",
-    // Filter:ColumnFilter
+    Filter: ColumnFilter,
   },
   {
     Header: "country of origin",
     accessor: "country_of_origin",
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "Product Name",
@@ -63,7 +63,7 @@ export const columsProductsinanalys = [
   {
     Header: "Category",
     accessor: "category",
-    // Filter:ColumnFilter
+    Filter: ColumnFilter,
   },
   {
     Header: "Product Name",
