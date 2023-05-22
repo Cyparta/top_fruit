@@ -12,7 +12,7 @@ import React from "react";
 // import { Table } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 
-function revenue() {
+function Revenue() {
   let router = useRouter();
   let dispatch = useDispatch();
   let url = router.route.slice(10).replace("/analytics", "");
@@ -53,4 +53,4 @@ function revenue() {
   );
 }
 
-export default revenue;
+export default Revenue;

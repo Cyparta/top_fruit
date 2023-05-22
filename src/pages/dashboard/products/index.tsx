@@ -14,7 +14,7 @@ import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 // import {Tab as Table} from "@/components/common/Table";
 // import { Breadcrumb } from ";
 
-function index() {
+function Index() {
   let router = useRouter();
   let url = router.route.slice(10).replace("/products", "");
   let data = "";
@@ -50,4 +50,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

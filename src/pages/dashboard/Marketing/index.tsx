@@ -33,7 +33,7 @@ const data: Crumbs[] = [
   { title: "Ads", to: "", active: true },
 ];
 
-function index() {
+function Index() {
   const [show, setShow] = useState(false);
   let dispatch = useDispatch();
   const handleClose = () => setShow(false);
@@ -207,4 +207,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

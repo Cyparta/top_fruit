@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch } from "react-redux";
 
-function taxes() {
+function Taxes() {
   let router = useRouter();
   let dispatch = useDispatch();
   let url = router.route.slice(10).replace("/analytics", "");
@@ -49,4 +49,4 @@ function taxes() {
   );
 }
 
-export default taxes;
+export default Taxes;

@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import AddImage from "@/components/products/AddImage";
 import Breadcrumbs from "@/components/analytics/Breadcrumb ";
 
-function addproduct() {
+function Addproduct() {
   let router = useRouter();
   // const [imageSrc, setImageSrc] = useState(imagecamer as unknown as string);
   let url = router.route.slice(10).replace("/products", "");
@@ -113,4 +113,4 @@ function addproduct() {
   );
 }
 
-export default addproduct;
+export default Addproduct;

@@ -6,7 +6,7 @@ import Tabs from "@/components/settings/tabs";
 import { useRouter } from "next/router";
 import React from "react";
 import Link from "next/link";
-function settings() {
+function Settings() {
   return (
     <>
       <div className="settings">
@@ -42,4 +42,4 @@ function settings() {
   );
 }
 
-export default settings;
+export default Settings;

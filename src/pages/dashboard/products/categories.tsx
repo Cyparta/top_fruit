@@ -8,7 +8,7 @@ import AddImage from "@/components/products/AddImage";
 import { useRouter } from "next/router";
 import React from "react";
 
-function categories() {
+function Categories() {
   let router = useRouter();
   let url = router.route.slice(10).replace("/products", "");
   let data = "";
@@ -46,4 +46,4 @@ function categories() {
   );
 }
 
-export default categories;
+export default Categories;

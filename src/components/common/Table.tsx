@@ -1,7 +1,6 @@
 import React from "react";
 // import {useTable} from 'react-table'
-import { colums } from "../../data/columsProduct";
-import { Product, productsNav } from "../../data/products";
+
 import {
   Column,
   useTable,
@@ -30,7 +29,15 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
     useGlobalFilter,
     useSortBy
   );
-
+  interface TableInstance {
+    getTableProps: () => any;
+    getTableBodyProps: () => any;
+    headerGroups: any[];
+    rows: any[];
+    prepareRow: (row: any) => void;
+    state: any;
+    setGlobalFilter: (filterValue: string | undefined) => void;
+  }
   const {
     getTableProps,
     getTableBodyProps,
@@ -39,7 +46,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
     prepareRow,
     state,
     setGlobalFilter,
-  } = tableInstance;
+  } = tableInstance as any as TableInstance;
   const { globalFilter }: any = state;
   console.log(state);
   let { name, mainnav } = useSelector((state:any) => state.analytics);
@@ -152,7 +159,7 @@ function Table({ data, columsresult, selectvalue }: tableprops) {
               },
               index
             ) => {
-              prepareRow(row);
+              prepareRow(row as any);
               return (
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {

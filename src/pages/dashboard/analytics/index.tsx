@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-function index() {
+function Index() {
   let router = useRouter();
   let dispatch = useDispatch();
   let [data, setdata] = useState("");
@@ -55,4 +55,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

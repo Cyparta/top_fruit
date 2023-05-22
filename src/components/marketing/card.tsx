@@ -9,7 +9,7 @@ import { conponsanalytics, conponsresult } from "@/data/marketingcarde";
 import { CgSearchFound } from "react-icons/cg";
 import { BsFillMapFill } from "react-icons/bs";
 function Cards() {
-  let { name } = useSelector((state) => state.marketing);
+  let { name } = useSelector((state: any) => state.marketing);
   let [result, setresult] = useState([] as analyticsinterface[]);
   let [chartresult, setcharresult] = useState(conponsanalytics as any[]);
 
@@ -42,7 +42,7 @@ function Cards() {
       setcharresult(conponsanalytics);
       setresult(conponsresult);
     }
-    console.log(chartresult,result,name);
+    console.log(chartresult, result, name);
   }, [result, name]);
   return (
     <>
@@ -85,7 +85,7 @@ function Cards() {
         })}
       </div>
       <div className=" mt-5">
-        {idele? (
+        {idele ? (
           chartresult
             .filter((ele) => ele.id === idele)
             .map((ele, index) => {

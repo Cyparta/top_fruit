@@ -21,7 +21,7 @@ const data: Crumbs[] = [
   { title: "All Members", to: "/dashboard/users", active: true },
 ];
 
-function index() {
+function Index() {
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(mainnav("users"));
@@ -73,4 +73,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

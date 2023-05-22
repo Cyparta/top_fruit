@@ -8,13 +8,21 @@ interface GlobalFilterprops {
   // column?: columsinterface;
   data?: Product[];
 }
-
+interface columsinterface {
+  filterValue: any;
+  setFilter: any;
+  preFilteredRows: any;
+  id: any;
+}
+interface columnmain {
+  column: columsinterface;
+}
 function ColumnFilter({
   column: { filterValue, setFilter, preFilteredRows, id },
-}) {
+}: columnmain) {
   const options = React.useMemo(() => {
-    const options = new Set();
-    preFilteredRows.forEach((row) => {
+    const options = new Set() as any;
+    preFilteredRows.forEach((row:any) => {
       options.add(row.values[id]);
     });
     return [...options.values()];

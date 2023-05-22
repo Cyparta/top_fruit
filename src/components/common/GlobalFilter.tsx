@@ -19,7 +19,7 @@ function GlobalFilter({
 }: GlobalFilterprops) {
   // const { filterselect, setfilterselect } = column;
   // const [selectvalue, setselectvalue] = useState();
-  let { name, mainnav } = useSelector((state) => state.analytics);
+  let { name, mainnav } = useSelector((state: any) => state.analytics);
   console.log(name, mainnav);
   return (
     <>
